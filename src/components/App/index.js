@@ -1,10 +1,10 @@
-import React from "react";
-import './App.scss';
-import { BrowserRouter, Route } from "react-router-dom";
-import Home from "../Home";
-import Login from "../Login";
-import Header from "../Header";
-import Message from "../../containers/Message";
+import React from 'react';
+// import './App.scss';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from '../Home';
+import Login from '../Login';
+import Header from '../Header';
+import Message from '../../containers/Message';
 
 const App = () => (
   <BrowserRouter>
