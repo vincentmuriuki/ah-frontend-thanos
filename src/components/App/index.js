@@ -1,9 +1,5 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import NavBar from "../../containers/NavBar";
 
-const App = () => (
-  <div>
-    <h1>React here!</h1>
-  </div>
-);
+const App = () => <NavBar />;
 export default App;

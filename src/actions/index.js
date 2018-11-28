@@ -1,0 +1,4 @@
+export default {
+  USER_LOGIN: "USER_LOGIN",
+  USER_REGISTRATION: "USER_REGISTRATION"
+};
