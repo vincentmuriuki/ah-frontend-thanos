@@ -8,7 +8,7 @@
 
 ## Description
 
-The website serves as a blog where persons write and read  articles
+The website serves as a blog where persons write and read articles
 
 ## Set up of the App
 
@@ -16,12 +16,14 @@ The website serves as a blog where persons write and read  articles
 
 2. Navigate to the project directory
 
-    `cd ah-frontend`
+   `cd ah-frontend`
 
 3. Clone the project
 
-    `git clone https://github.com/andela/ah-frontend-thanos.git`
+   `git clone https://github.com/andela/ah-frontend-thanos.git`
 
 4. Install dependencies using `npm install`
 
-5. Run Application using `npm run start`
+5. Run Application locally using `npm run start:dev`
+
+6. Run the production build locally using `npm run start:prod`
