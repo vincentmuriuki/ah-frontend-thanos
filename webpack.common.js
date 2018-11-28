@@ -49,6 +49,9 @@ module.exports = {
 			},
 		],
 	},
+	devServer: {
+		historyApiFallback: true
+	  },
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Authors Haven',
