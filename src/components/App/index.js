@@ -1,8 +1,9 @@
 import React from 'react';
+import './App.scss';
 
 const App = () => (
   <div>
-    <p>React here!</p>
+    <h1>React here!</h1>
   </div>
 );
 export default App;
