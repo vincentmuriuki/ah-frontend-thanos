@@ -28,10 +28,17 @@ module.exports = {
 			experimentalObjectRestSpread: true,
 		},
 	},
-	rules: {    
+	rules: {
 		"react/jsx-indent": ["error", 2],
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"jsx-a11y/label-has-for": [ 2, {
+            "components": [ "Label" ],
+            "required": {
+                "some": [ "nesting", "id" ]
+            },
+            "allowChildren": false
+        }],
 		"curly": [2, "multi-line"],
-		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
 	}
 }
