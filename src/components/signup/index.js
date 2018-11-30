@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import './signup.scss';
-import SocialMediaLinks from '../SocialMediaLinks';
+// import SocialMediaLinks from '../SocialMediaLinks';
 import generateRedirectLinks from '../../commons/redirectLinks';
+import SocialLogin from '../Login/socialLogin';
 
 
 library.add(fab);
@@ -65,7 +66,7 @@ const SignUp = ({ onSubmit, onChange }) => {
             <button type="submit" className="btn btn-primary" id="signUpBt" name="signUpBt">Sign Up</button>
             <div className="social-login-icons">
               <small className="text-muted p-1">Or Sign Up with Social Media: </small>
-              <SocialMediaLinks />
+              <SocialLogin />
             </div>
           </div>
           {generateRedirectLinks('Already a member? ', 'login', 'Login')}

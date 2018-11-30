@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`facebooklogin component should render correctly 1`] = `
+<div>
+  <t
+    appId="272693923595939"
+    authType=""
+    autoLoad={true}
+    callback={[Function]}
+    cookie={false}
+    disableMobileRedirect={false}
+    fields="name"
+    isMobile={false}
+    language="en_US"
+    onFailure={null}
+    redirectUri="/"
+    render={[Function]}
+    responseType="code"
+    returnScopes={false}
+    scope="public_profile,email"
+    state="facebookdirect"
+    version="2.3"
+    xfbml={false}
+  />
+  <e
+    accessType="online"
+    buttonText="Sign in with Google"
+    clientId="900310410364-85tesresu2mm1a5i9jugf4d4tp5qm4dj.apps.googleusercontent.com"
+    cookiePolicy="single_host_origin"
+    disabledStyle={
+      Object {
+        "opacity": 0.6,
+      }
+    }
+    fetchBasicProfile={true}
+    icon={true}
+    isSignedIn={false}
+    jsSrc="https://apis.google.com/js/client:platform.js"
+    onFailure={[Function]}
+    onRequest={[Function]}
+    onSuccess={[Function]}
+    prompt=""
+    redirectUri="/"
+    render={[Function]}
+    scope="profile email"
+    tag="button"
+    theme="light"
+    type="button"
+    uxMode="popup"
+  />
+</div>
+`;
