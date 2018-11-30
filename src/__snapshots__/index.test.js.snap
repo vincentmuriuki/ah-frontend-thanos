@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Provider and App renders <App/> correctly 1`] = `
+<BrowserRouter>
+  <div>
+    <Header />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/login"
+    />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`Provider and App renders <Provider/> correctly 1`] = `<App />`;
