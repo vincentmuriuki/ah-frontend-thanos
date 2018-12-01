@@ -13,6 +13,7 @@ exports[`Provider and App renders <App/> correctly 1`] = `
       component={[Function]}
       path="/login"
     />
+    <Footer />
   </div>
 </BrowserRouter>
 `;

@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce82a44a84f603a410ac/maintainability)](https://codeclimate.com/github/andela/ah-frontend-thanos/maintainability)
 [![Build Status](https://travis-ci.org/andela/ah-frontend-thanos.svg?branch=develop)](https://travis-ci.org/andela/ah-frontend-thanos)
-[![Coverage Status](https://coveralls.io/repos/github/andela/ah-frontend-thanos/badge.svg?branch=ch-setup-test-env-%23161348746)](https://coveralls.io/github/andela/ah-frontend-thanos?branch=ch-setup-test-env-%23161348746)
+[![Coverage Status](https://coveralls.io/repos/github/andela/ah-frontend-thanos/badge.svg?branch=develop)](https://coveralls.io/github/andela/ah-frontend-thanos?branch=develop)
 
 # Authors Haven
 

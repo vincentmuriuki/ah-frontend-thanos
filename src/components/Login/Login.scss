@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  padding: 30px;
+  margin-bottom: -500px;
+  margin-top: 100px;
+}
+
+.col-left {
+  width: 50%;
+  img {
+    width: 100%;
+  }
+}
+.col-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: solid 1px #cccccc;
+
+  form {
+    width: 100%;
+  }
+}
+.signin-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  .sign-in-bt {
+    background-color: black;
+    border: none;
+    &:hover {
+      background-color: #3db184;
+    }
+  }
+}
+.social-login-icons {
+  display: flex;
+  justify-content: center;
+
+  .icon {
+    height: 22px;
+    width: auto;
+    margin: 0 10px;
+  }
+  .icon:hover {
+    cursor: pointer;
+  }
+
+  .fa-facebook-f path:hover {
+    fill: #3b5998;
+  }
+  .fa-twitter path:hover {
+    fill: #38a1f3;
+  }
+  .fa-google path:hover {
+    fill: #ff0000;
+  }
+}
+
+// For responsiveness
+@media only screen and (max-width: 900px) {
+  .container,
+  .social-login-icons {
+    flex-wrap: wrap;
+  }
+  .col-right,
+  .col-left,
+  .social-login-icons .icons-group {
+    width: 100%;
+  }
+}

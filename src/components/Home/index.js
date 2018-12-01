@@ -1,7 +1,8 @@
 import React from 'react';
+import './Home.scss';
 
 const Home = () => (
-  <div className="jumbotron">
+  <div className="jumbotron home">
     <h1 className="display-4">Welcome to authors haven</h1>
     <p className="lead">Write read and learn</p>
     <hr className="my-4" />
