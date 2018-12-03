@@ -3,7 +3,8 @@ import * as PropTypes from 'prop-types';
 import './Login.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SocialMediaLinks from '../SocialMediaLinks';
+import LoginSignupRedirect from '../LoginSignupRedirect';
 
 library.add(fab);
 
@@ -57,20 +58,10 @@ const Login = ({ onChange, onSubmit }) => {
                 Or Sign In with Social Media:
                 {' '}
               </small>
-              <div className="icons-group text-center">
-                <FontAwesomeIcon
-                  className="icon"
-                  icon={['fab', 'facebook-f']}
-                />
-                <FontAwesomeIcon className="icon" icon={['fab', 'twitter']} />
-                <FontAwesomeIcon className="icon" icon={['fab', 'google']} />
-              </div>
+              <SocialMediaLinks />
             </div>
           </div>
-          <div className="small mt-3">
-            <span>Not yet a member? </span>
-            <a href="/signup">Sign Up</a>
-          </div>
+          <LoginSignupRedirect message="Not yet a member? " link="signup" linkName="Sign Up" />
         </form>
       </div>
     </div>

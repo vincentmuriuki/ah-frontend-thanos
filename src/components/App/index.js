@@ -6,6 +6,7 @@ import Home from '../Home';
 import LoginPage from '../../containers/LoginPage';
 import Header from '../Header';
 import { Footer } from '../Footer';
+import SignUpPageConnected from '../../containers/SignUpPage';
 
 library.add(faSearch);
 
@@ -15,8 +16,11 @@ const App = () => (
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/signup" component={SignUpPageConnected} />
       <Footer />
     </div>
   </BrowserRouter>
 );
+
+
 export default App;
