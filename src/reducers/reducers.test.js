@@ -5,7 +5,7 @@ import USER_REGISTRATION from '../actions/index';
 describe('post reducer', () => {
   it('should return the initial state', () => {
     expect(combinedReducers(undefined, {})).toEqual({
-      article: {}, user: { testMessage: 'Hello Team Thanos' },
+      article: {}, user: {},
     });
   });
 
@@ -14,6 +14,6 @@ describe('post reducer', () => {
       type: USER_REGISTRATION,
     };
     // it's empty on purpose because it's just starting to fetch posts
-    expect(combinedReducers({}, startAction)).toEqual({ article: {}, user: { testMessage: 'Hello Team Thanos' } });
+    expect(combinedReducers({}, startAction)).toEqual({ article: {}, user: {} });
   });
 });
