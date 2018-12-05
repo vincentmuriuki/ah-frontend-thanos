@@ -1,9 +1,8 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import './Login.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-// import SocialMediaLinks from '../SocialMediaLinks';
+import './Login.scss';
 import generateRedirectLinks from '../../commons/redirectLinks';
 import SocialLogin from './socialLogin';
 

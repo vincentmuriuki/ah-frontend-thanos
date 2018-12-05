@@ -2,11 +2,12 @@ import expect from 'expect';
 import combinedReducers from '../index';
 import userReducer from '../userReducer';
 import articleReducer from '../articleReducer';
-import ACTION_TYPES from '../../actions/actionTypes';
 import initialState from '../../commons/initialStates';
+import ACTION_TYPE from '../../actions/actionTypes';
+
 
 describe('post reducer', () => {
-  it('should returns the initial state', () => {
+  it('should return the initial state', () => {
     expect(combinedReducers(undefined, {})).toEqual(initialState);
   });
 
@@ -23,20 +24,11 @@ describe('post reducer', () => {
   });
 });
 
-describe('socialLoginReducer', () => {
-  it('it should have a default state', () => {
-    expect(userReducer(undefined, { type: 'unexpected' })).toEqual(initialState.userReducer);
-  });
-  it('should state on LOGIN action', () => {
-    expect(
-      userReducer(undefined, {
-        type: ACTION_TYPES.LOGIN,
-        payload: true,
-      }),
-    ).toEqual({
-      freshUser: {
-        email: '', password: '', username: '',
-      },
-    });
+describe('post reducer', () => {
+  it('should handle EDIT_PROFILE', () => {
+    const startAction = {
+      type: ACTION_TYPE.EDIT_PROFILE,
+    };
+    expect(combinedReducers(undefined, startAction)).toEqual(initialState);
   });
 });

@@ -9,9 +9,10 @@ import { Footer } from '../Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
 import Articles from '../../containers/Articles';
 import ArticlePageConnected from '../../containers/ArticlePage';
+import ProfileConnected from '../../containers/profiles/profiles';
+import EditProfilePageConnected from '../../containers/profiles/editProfile';
 
 library.add(faSearch);
-
 const App = () => (
   <BrowserRouter>
     <React.Fragment>
@@ -22,8 +23,10 @@ const App = () => (
         <Route path="/signup" component={SignUpPageConnected} />
         <Route path="/articles" component={Articles} />
         <Route path="/article/:articleId" component={ArticlePageConnected} />
+        <Route path="/profile" component={ProfileConnected} />
+        <Route path="/profiles/edit" component={EditProfilePageConnected} />
+        <Footer />
       </Switch>
-      <Footer />
     </React.Fragment>
   </BrowserRouter>
 );

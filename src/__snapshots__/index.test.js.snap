@@ -2,7 +2,7 @@
 
 exports[`Provider and App renders <App/> correctly 1`] = `
 <BrowserRouter>
-  <Header />
+  <withRouter(Header) />
   <Switch>
     <Route
       component={[Function]}
@@ -25,8 +25,16 @@ exports[`Provider and App renders <App/> correctly 1`] = `
       component={[Function]}
       path="/article/:articleId"
     />
+    <Route
+      component={[Function]}
+      path="/profile"
+    />
+    <Route
+      component={[Function]}
+      path="/profiles/edit"
+    />
+    <Footer />
   </Switch>
-  <Footer />
 </BrowserRouter>
 `;
 
