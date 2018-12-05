@@ -9,11 +9,9 @@ describe('<SignUpPage />', () => {
   let signUpPageComponent;
 
   beforeEach(() => {
-    const middlewares = [thunk];
-    const mockStore = configureStore(middlewares);
-    const initialState = { article: {}, user: { freshUser: { email: '', password: '', username: '' } } };
-    const store = mockStore(initialState);
-    signUpPageComponent = shallow(<SignUpPageConnected store={store} />);
+    const mockStore = configureStore([thunk]);
+    const initialState = { articleReducer: { article: {} }, userReducer: { freshUser: {} } };
+    signUpPageComponent = shallow(<SignUpPageConnected store={mockStore(initialState)} />);
   });
 
   it('should render the component', () => {

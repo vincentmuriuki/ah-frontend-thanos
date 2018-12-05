@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LikeDislike /> renders component 1`] = `
+<div
+  className="article-like-dislike"
+>
+  <form>
+    <button
+      className="thumbs mr-2"
+      id="bt-like"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="thumbs-up"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+    <span
+      className="mr-4"
+    >
+      0
+    </span>
+    <button
+      className="thumbs mr-2"
+      id="bt-dislike"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="thumbs-down"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+    <span
+      className=""
+    >
+      0
+    </span>
+  </form>
+</div>
+`;
+
+exports[`<LikeDislike /> should default likes/dislikes to 0 if state makes it less than zero 1`] = `
+<div
+  className="article-like-dislike"
+>
+  <form>
+    <button
+      className="thumbs mr-2"
+      id="bt-like"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="thumbs-up"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+    <span
+      className="mr-4"
+    >
+      0
+    </span>
+    <button
+      className="thumbs mr-2"
+      id="bt-dislike"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="thumbs-down"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+    <span
+      className=""
+    >
+      0
+    </span>
+  </form>
+</div>
+`;

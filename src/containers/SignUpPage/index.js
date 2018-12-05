@@ -33,8 +33,8 @@ SignUpPage.propTypes = {
   freshUser: PropTypes.shape({}).isRequired,
 };
 
-const mapStateToProps = ({ user }) => (
-  { freshUser: user.freshUser }
+const mapStateToProps = ({ userReducer }) => (
+  { freshUser: userReducer.freshUser }
 );
 export const mapDispatchToProps = dispatch => (
   {

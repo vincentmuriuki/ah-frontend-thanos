@@ -4,13 +4,13 @@ import './Login.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import SocialMediaLinks from '../SocialMediaLinks';
-import LoginSignupRedirect from '../LoginSignupRedirect';
+import generateRedirectLinks from '../../commons/redirectLinks';
 
 library.add(fab);
 
 const Login = ({ onChange, onSubmit }) => {
   const loginHtml = (
-    <div className="container">
+    <div className="container login-box">
       <div className="col-left">
         <img
           src="https://iviidev.info/downloads/images/reading.jpg"
@@ -61,7 +61,7 @@ const Login = ({ onChange, onSubmit }) => {
               <SocialMediaLinks />
             </div>
           </div>
-          <LoginSignupRedirect message="Not yet a member? " link="signup" linkName="Sign Up" />
+          {generateRedirectLinks('Not yet a member? ', 'signup', 'Sign Up')}
         </form>
       </div>
     </div>

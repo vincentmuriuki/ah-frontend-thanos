@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const ArticleDisplay = ({ article }) => (
   <div className="article-card">
@@ -11,7 +10,7 @@ const ArticleDisplay = ({ article }) => (
       <div className="title-section">{article.title}</div>
       <div className="body-section">{article.description}</div>
       <div className="read-more">
-        <Link to={`/articles/${article.id}`}>Read More</Link>
+        <a href={`/article/${article.id}`}>Read More</a>
       </div>
     </div>
   </div>

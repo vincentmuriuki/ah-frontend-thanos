@@ -1,0 +1,19 @@
+$primaryDark: #20c0b0;
+
+.article-like-dislike {
+    font-size: 17px;
+    margin: 15px 10px;
+}
+.article-like-dislike {
+    .thumbs {
+        background: #eaeaea;
+        padding: 7px 10px;
+    }
+    .thumbs:hover {
+        cursor: pointer;
+
+        svg path {
+            color: $primaryDark;
+        }
+    }
+}

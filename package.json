@@ -9,8 +9,8 @@
     "start": "serve -s dist",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src",
-	"heroku-postbuild": "npm run build",
-	"test": "jest",
+    "heroku-postbuild": "npm run build",
+    "test": "jest",
     "test:cov": "jest --coverage --env='jsdom'",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
@@ -86,7 +86,8 @@
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "@babel/plugin-proposal-class-properties": "^7.2.1"
   },
   "jest": {
     "snapshotSerializers": [
@@ -106,5 +107,13 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy"
     }
-  }
+  },
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
 }

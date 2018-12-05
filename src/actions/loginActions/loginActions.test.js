@@ -37,8 +37,10 @@ describe('Login Actions tests', () => {
     });
     const expectedtActions = { type: ACTION_TYPE.USER_LOGIN_SUCCESS };
     const store = mockStore({});
-    store.dispatch(loginThunk()).then(() => {
-      expect(store.getActions()).toEqual(expect.objectContaining(expectedtActions));
-    });
+    store.dispatch(loginThunk())
+      .then(() => {
+        expect(store.getActions()).toEqual(expect.objectContaining(expectedtActions));
+      })
+      .catch(() => {});
   });
 });

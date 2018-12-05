@@ -30,11 +30,13 @@ export const userSignup = freshUser => (dispatch) => {
       setTimeout(() => window.location.replace('/login'), 3000);
     })
     .catch((error) => {
-      dispatch(signupFail({
-        results: error.response.data.results,
-      }));
-      const errors = error.response.data.results;
-      const message = (errors.username ? errors.username[0] : errors.email[0]);
-      swal({ ...swalMessages.REGISTRATION_ERROR, text: message });
+      if (error.response) {
+        dispatch(signupFail({
+          results: error.response.data.results,
+        }));
+        const errors = error.response.data.results;
+        const message = (errors.username ? errors.username[0] : errors.email[0]);
+        swal({ ...swalMessages.REGISTRATION_ERROR, text: message });
+      }
     });
 };
