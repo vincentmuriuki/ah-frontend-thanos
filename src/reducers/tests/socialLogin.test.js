@@ -13,4 +13,9 @@ describe('Social Login Reducer tests', () => {
       isLoggedIn: true,
     });
   });
+
+  test('LOGIN', () => {
+    expect(SocialLoginReducer(initialState,
+      { type: actionTypes.SOCIAL_LOGIN })).toEqual(initialState);
+  });
 });

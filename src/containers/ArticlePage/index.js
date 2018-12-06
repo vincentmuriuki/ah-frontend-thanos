@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Article from '../../components/Article';
 import { likeDislikeArticleThunk } from '../../actions/likedislikeActions';
 import { getArticleThunk, getLikeStatusThunk } from '../../actions/articleActions';
+import Comments from '../comments';
 
 export class ArticlePage extends Component {
   componentDidMount() {
@@ -29,9 +30,17 @@ export class ArticlePage extends Component {
   }
 
   render() {
-    const { article } = this.props;
+    const { article, match } = this.props;
     return (
-      <Article onLikeDislike={this.handleLikeDislike} article={article} />
+      <div>
+        <Article onLikeDislike={this.handleLikeDislike} article={article} />
+        <hr />
+        <br />
+        {article.id
+          ? <Comments match={match} />
+          : <div />
+        }
+      </div>
     );
   }
 }

@@ -75,9 +75,9 @@ Login.propTypes = {
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
-SocialLogin.defaultProps = {
-  onChange: {},
-  onSubmit: {},
+Login.defaultProps = {
+  onChange: () => { },
+  onSubmit: () => { },
 };
 
 export default Login;
