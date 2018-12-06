@@ -18,6 +18,6 @@ describe('Footer tests', () => {
   });
   test('testing div', () => {
     const wrapper = mount(<Footer />);
-    expect(wrapper.find('.footer').hasClass('.row'));
+    expect(wrapper.find('.footer').hasClass('row'));
   });
 });

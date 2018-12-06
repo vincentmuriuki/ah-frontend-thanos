@@ -21,7 +21,7 @@ const props = {
 
 describe('<Login />', () => {
   test('renders the component', () => {
-    const LoginComponent = shallow(<Login />);
+    const LoginComponent = shallow(<Login onChange={jest.fn()} onSubmit={jest.fn()} />);
     expect(LoginComponent).toMatchSnapshot();
   });
 });

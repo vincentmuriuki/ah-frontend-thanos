@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Login /> renders the component 1`] = `
+exports[`<SignUp /> renders the component 1`] = `
 <div
   className="container"
 >
@@ -9,28 +9,45 @@ exports[`<Login /> renders the component 1`] = `
   >
     <img
       alt="Sign up poster"
-      src="https://images.pexels.com/photos/34072/pexels-photo.jpg"
+      src="https://iviidev.info/downloads/images/reading.jpg"
     />
   </div>
   <div
     className="col-right"
   >
     <form
-      onSubmit={[MockFunction]}
+      onSubmit={[Function]}
     >
       <h3
         className="text-center"
       >
-        Sign In
+        Sign Up
       </h3>
       <div
         className="form-group"
+        key="username"
+      >
+        <input
+          className="form-control"
+          id="username"
+          name="username"
+          onChange={[Function]}
+          pattern="[A-Za-z]{3,}$"
+          placeholder="Username"
+          required={true}
+          title="Must contain at least three characters or more characters without spaces"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+        key="email"
       >
         <input
           className="form-control"
           id="email"
           name="email"
-          onChange={[MockFunction]}
+          onChange={[Function]}
           pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_\`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
           placeholder="Email"
           required={true}
@@ -40,27 +57,30 @@ exports[`<Login /> renders the component 1`] = `
       </div>
       <div
         className="form-group"
+        key="password"
       >
         <input
           className="form-control"
           id="password"
           name="password"
-          onChange={[MockFunction]}
+          onChange={[Function]}
+          pattern="^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z0-9$@$!%*#?&]{8,}$"
           placeholder="**********"
           required={true}
+          title="Must contain at least one number and one letter, one special character, and at least 8 or more characters"
           type="password"
         />
       </div>
       <div
-        className="signin-buttons"
+        className="signup-buttons"
       >
         <button
-          className="btn btn-primary sign-in-bt"
-          id="signInBt"
-          name="signInBt"
+          className="btn btn-primary"
+          id="signUpBt"
+          name="signUpBt"
           type="submit"
         >
-          Sign In
+          Sign Up
         </button>
         <div
           className="social-login-icons"
@@ -68,16 +88,15 @@ exports[`<Login /> renders the component 1`] = `
           <small
             className="text-muted p-1"
           >
-            Or Sign In with Social Media:
-             
+            Or Sign Up with Social Media: 
           </small>
           <SocialMediaLinks />
         </div>
       </div>
       <LoginSignupRedirect
-        link="signup"
-        linkName="Sign Up"
-        message="Not yet a member? "
+        link="login"
+        linkName="Login"
+        message="Already a member? "
       />
     </form>
   </div>
