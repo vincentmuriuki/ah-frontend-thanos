@@ -5,6 +5,7 @@ import actionTypes from '../actionTypes';
 import {
   signupSuccessful, signupFail, getUserInput, userSignup,
 } from '../userActions';
+import APP_URL from '../../utils/constants';
 
 const mockStore = configureMockStore([thunk]);
 
@@ -50,7 +51,7 @@ describe('Test User actions', () => {
   });
 
   test('UserSignup Action Pass', () => {
-    moxios.stubRequest('https://ah-backend-thanos-staging.herokuapp.com/api/users', {
+    moxios.stubRequest(`${APP_URL}/users`, {
       status: 200,
       responseText: {
         email: 'johndoe@example.com',
@@ -68,7 +69,7 @@ describe('Test User actions', () => {
   });
 
   test('UserSignup Action Fail', () => {
-    moxios.stubRequest('https://ah-backend-thanos-staging.herokuapp.com/api/users', {
+    moxios.stubRequest(`${APP_URL}/users`, {
       status: 400,
       responseText: {
         email: ['user with this email already exists'],

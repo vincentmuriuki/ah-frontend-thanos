@@ -2,6 +2,7 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 import ACTION_TYPE from '../actionTypes';
 import swalMessages from '../swalAlerts';
+import APP_URL from '../../utils/constants';
 
 export const loginSuccess = response => ({
   type: ACTION_TYPE.USER_LOGIN_SUCCESS,
@@ -20,7 +21,7 @@ export const loginThunk = data => (dispatch) => {
       ...data,
     },
   };
-  return axios.post('https://ah-backend-thanos-staging.herokuapp.com/api/users/login', userdata)
+  return axios.post(`${APP_URL}/users/login`, userdata)
     .then((res) => {
       dispatch(loginSuccess(res.data.results));
       localStorage.setItem('token', res.data.results.token);

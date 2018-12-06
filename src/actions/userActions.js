@@ -2,6 +2,7 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 import actionTypes from './actionTypes';
 import swalMessages from './swalAlerts';
+import APP_URL from '../utils/constants';
 
 export const signupSuccessful = response => ({
   type: actionTypes.USER_REGISTER_SUCCESS,
@@ -20,7 +21,7 @@ export const getUserInput = payload => ({
 
 export const userSignup = freshUser => (dispatch) => {
   swal.showLoading();
-  return axios.post('https://ah-backend-thanos-staging.herokuapp.com/api/users', freshUser)
+  return axios.post(`${APP_URL}/users`, freshUser)
     .then((response) => {
       dispatch(signupSuccessful({
         results: response.data.results,

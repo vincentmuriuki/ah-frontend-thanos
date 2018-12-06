@@ -3,6 +3,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { loginSuccess, loginThunk, loginFailure } from './loginAction';
 import ACTION_TYPE from '../actionTypes';
+import APP_URL from '../../utils/constants';
 
 const mockStore = configureMockStore([thunk]);
 
@@ -30,7 +31,7 @@ describe('Login Actions tests', () => {
     }));
   });
   test('Login successfull', () => {
-    moxios.stubRequest('https://ah-backend-thanos-staging.herokuapp.com/api/users/login', {
+    moxios.stubRequest(`${APP_URL}/users/login`, {
       status: 200,
       responseText: { email: 'jude@gmail.com' },
     });
