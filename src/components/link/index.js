@@ -5,7 +5,7 @@ const UrlLink = (props) => {
   const { link, linkName, ...otherProps } = props;
   return (
     <li className="nav-item active">
-      <NavLink className="nav-link" to={`/${link}`} {...otherProps}>
+      <NavLink className="nav-link" to={`${link}`} {...otherProps}>
         {linkName}
         <span className="sr-only">(current)</span>
       </NavLink>

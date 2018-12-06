@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> renders the component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="col-left"
+  >
+    <img
+      alt="Sign up poster"
+      src="https://images.pexels.com/photos/34072/pexels-photo.jpg"
+    />
+  </div>
+  <div
+    className="col-right"
+  >
+    <form>
+      <h3
+        className="text-center"
+      >
+        Sign In
+      </h3>
+      <div
+        className="form-group"
+      >
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_\`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
+          placeholder="Email"
+          required={true}
+          title="Please provide a valid email address"
+          type="email"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <input
+          className="form-control"
+          id="password"
+          name="password"
+          placeholder="**********"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="signin-buttons"
+      >
+        <button
+          className="btn btn-primary sign-in-bt"
+          id="signInBt"
+          name="signInBt"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <div
+          className="social-login-icons"
+        >
+          <small
+            className="text-muted p-1"
+          >
+            Or Sign In with Social Media:
+             
+          </small>
+          <div
+            className="icons-group text-center"
+          >
+            <FontAwesomeIcon
+              border={false}
+              className="icon"
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Array [
+                  "fab",
+                  "facebook-f",
+                ]
+              }
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size={null}
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            />
+            <FontAwesomeIcon
+              border={false}
+              className="icon"
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Array [
+                  "fab",
+                  "twitter",
+                ]
+              }
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size={null}
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            />
+            <FontAwesomeIcon
+              border={false}
+              className="icon"
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Array [
+                  "fab",
+                  "google",
+                ]
+              }
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size={null}
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="small mt-3"
+      >
+        <span>
+          Not yet a member? 
+        </span>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+`;
