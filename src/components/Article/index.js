@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './article.scss';
 import LikeDislike from '../LikeDislike';
+import RatingPage from '../../containers/RatingPage';
 
 library.add(faUser, faClock, faCalendar, faEye, faCheck, faThumbsUp, faThumbsDown);
 
@@ -68,7 +69,7 @@ const Article = ({ onLikeDislike, article }) => {
               likes={article.likes}
               dislikes={article.dislikes}
             />
-
+            <RatingPage articleId={article.id} />
             <div className="article-views">
               <FontAwesomeIcon icon="eye" />
               <span className="pl-2"># Views</span>

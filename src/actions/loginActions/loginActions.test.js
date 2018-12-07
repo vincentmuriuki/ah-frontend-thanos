@@ -5,9 +5,12 @@ import { loginSuccess, loginThunk, loginFailure } from './loginAction';
 import ACTION_TYPE from '../actionTypes';
 import APP_URL from '../../utils/constants';
 
-const mockStore = configureMockStore([thunk]);
-
 describe('Login Actions tests', () => {
+  const mockStore = configureMockStore([thunk]);
+  const loginSuccessData = {
+    status: 200,
+    responseText: { email: 'jude@gmail.com' },
+  };
   beforeEach(() => {
     // import and pass your custom axios instance to this method
     moxios.install();
@@ -20,7 +23,7 @@ describe('Login Actions tests', () => {
     const response = 'jude@example.com';
     expect(loginSuccess(response)).toEqual(expect.objectContaining({
       type: ACTION_TYPE.USER_LOGIN_SUCCESS,
-      payload: { response },
+      payload: { response: 'jude@example.com' },
     }));
   });
   test('Failed login action', () => {
@@ -30,21 +33,28 @@ describe('Login Actions tests', () => {
       errorMessage: '',
     }));
   });
+  const returnExpect = (store, expectedtActions) => (
+    store.dispatch(loginThunk()).then(() => {
+      expect(store.getActions()).toEqual(expect.objectContaining(expectedtActions));
+    })
+  );
   test('Login successfull', () => {
+    moxios.stubRequest(`${APP_URL}/users/login`, loginSuccessData);
+    const expectedtActions = { type: ACTION_TYPE.USER_LOGIN_SUCCESS };
+    const store = mockStore({});
+    returnExpect(store, expectedtActions);
+  });
+  test('Login failed', () => {
     moxios.stubRequest(`${APP_URL}/users/login`, {
-      status: 200,
-      responseText: { email: 'jude@gmail.com' },
+      status: 400,
+      response: { error: 'Not found' },
     });
     const expectedtActions = [{
       payload: { response: undefined },
       type: ACTION_TYPE.USER_LOGIN_SUCCESS,
     }];
     const store = mockStore({});
-    store.dispatch(loginThunk())
-      .then(() => {
-        expect(store.getActions()).toEqual(expect.objectContaining(expectedtActions));
-      })
-      .catch(() => {});
+    returnExpect(store, expectedtActions);
   });
   test('Login unsuccessfull', () => {
     moxios.stubRequest(`${APP_URL}/users/login`, {

@@ -40,7 +40,6 @@ export class EditProfilePage extends Component {
         widget.close();
       }
     });
-    widget.open();
   };
 
   render() {

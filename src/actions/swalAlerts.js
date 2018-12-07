@@ -27,6 +27,12 @@ const swalMessages = {
     type: 'error',
     confirmButtonText: 'Try Again',
   },
+  RATING_SUCCESSFUL: {
+    title: 'Rating Successful',
+    text: 'You successfully rated the article',
+    type: 'success',
+    confirmButtonText: 'continue',
+  },
 };
 
 export default swalMessages;

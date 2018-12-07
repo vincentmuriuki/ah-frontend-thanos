@@ -1,5 +1,4 @@
 import axios from 'axios';
-import swal from 'sweetalert2';
 import ACTION_TYPE from '../actionTypes';
 import APP_URL from '../../utils/constants';
 
@@ -14,7 +13,6 @@ export const loginFailure = errorMessage => ({
   errorMessage,
 });
 export const loginThunk = data => (dispatch) => {
-  swal.showLoading();
   const userdata = {
     user: {
       ...data,
