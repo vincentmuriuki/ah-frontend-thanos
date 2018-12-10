@@ -1,9 +1,17 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UrlLink from '../link';
 import './Header.scss';
+
+export const navDropDown = (link, displayName) => (
+  <div>
+    <div className="dropdown-divider" />
+    <NavLink className="dropdown-item dropdown-single" to={link}>{displayName}</NavLink>
+  </div>
+
+);
 
 
 const isLoggedIn = () => (localStorage.getItem('token'));
@@ -28,7 +36,15 @@ const Header = ({ history }) => (
 
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav mr-auto mt-1 mt-lg-0 nav-1">
-          <UrlLink link="/ARTICLES" linkName="ARTICLES" />
+          <li className="nav-item dropdown">
+            <NavLink className="nav-link dropdown-toggle" to="/ARTICLES" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ARTICLES
+            </NavLink>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              {navDropDown('/ARTICLES', 'All articles')}
+              {navDropDown('/createArticle', 'Create Article')}
+            </div>
+          </li>
           <UrlLink link="/ABOUT" linkName="ABOUT" />
           <UrlLink link="/CONTACT" linkName="CONTACT" />
         </ul>

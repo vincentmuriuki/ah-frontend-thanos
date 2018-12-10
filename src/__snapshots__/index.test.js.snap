@@ -35,6 +35,10 @@ exports[`Provider and App renders <Provider/> correctly 2`] = `
       component={[Function]}
       path="/profiles/edit"
     />
+    <Route
+      component={[Function]}
+      path="/createArticle"
+    />
   </Switch>
   <Footer />
 </BrowserRouter>
