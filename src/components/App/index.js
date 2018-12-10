@@ -9,6 +9,7 @@ import { Footer } from '../Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
 import Articles from '../../containers/Articles';
 import ArticlePageConnected from '../../containers/ArticlePage';
+import FollowUnfollow from '../../containers/FollowUnfollow';
 
 library.add(faSearch);
 
@@ -22,6 +23,7 @@ const App = () => (
         <Route path="/signup" component={SignUpPageConnected} />
         <Route path="/articles" component={Articles} />
         <Route path="/article/:articleId" component={ArticlePageConnected} />
+        <Route exact path="/profiles/:username" component={FollowUnfollow} />
       </Switch>
       <Footer />
     </React.Fragment>

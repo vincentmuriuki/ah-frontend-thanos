@@ -25,6 +25,11 @@ exports[`Provider and App renders <App/> correctly 1`] = `
       component={[Function]}
       path="/article/:articleId"
     />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/profiles/:username"
+    />
   </Switch>
   <Footer />
 </BrowserRouter>

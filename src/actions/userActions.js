@@ -45,6 +45,11 @@ export const socialUserLogin = (url, token) => (dispatch) => {
         results: error.response,
         status_code: error.response,
       }));
+      if (error.response) {
+        dispatch(signupFail({
+          results: error.response.data.results,
+        }));
+      }
     });
 };
 export default socialUserLogin;

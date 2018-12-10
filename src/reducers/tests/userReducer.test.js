@@ -56,6 +56,7 @@ describe('Testing User Reducer', () => {
     };
     expect(userReducer(intialState, action)).toEqual(expectedData);
   });
+
   test('test user logged in succesfullymwith social media', () => {
     const data = { response: 'judeinno@gmail.com' };
     const action = {
@@ -68,6 +69,7 @@ describe('Testing User Reducer', () => {
     };
     expect(socialLoginReducer(data, action)).toEqual(expectedData);
   });
+
   test('test user logged in succesfullymwith social media', () => {
     const data = { response: 'judeinno@gmail.com' };
     const action = {
@@ -79,5 +81,21 @@ describe('Testing User Reducer', () => {
       data: action.payload,
     };
     expect(socialLoginReducer(data, action)).toEqual(expectedData);
+  });
+
+  test('Test Reducer User Register Fail with no username', () => {
+    const intialState = {};
+    const payload = {
+      email: ['user email already exists'],
+    };
+    const action = {
+      type: ACTION_TYPE.USER_REGISTER_FAIL,
+      payload,
+    };
+    const expectedData = {
+      ...intialState,
+      data: action.payload,
+    };
+    expect(userReducer(intialState, action)).toEqual(expectedData);
   });
 });

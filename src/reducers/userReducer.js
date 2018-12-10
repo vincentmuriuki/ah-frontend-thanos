@@ -1,7 +1,7 @@
-// handle all actions pertaining to the user (login, registration, ...)
 import swal from 'sweetalert2';
 import actionTypes from '../actions/actionTypes';
 import swalMessages from '../actions/swalAlerts';
+
 
 const initialState = {
   freshUser: {
@@ -24,11 +24,17 @@ const userReducer = (state = initialState, action) => {
         ...state,
         data: action.payload,
       };
-    case actionTypes.USER_REGISTER_FAIL:
+    case actionTypes.USER_REGISTER_FAIL: {
+      const errors = action.payload;
+      swal({
+        ...swalMessages.REGISTRATION_ERROR,
+        text: (errors.username ? errors.username[0] : errors.email[0]),
+      });
       return {
         ...state,
         data: action.payload,
       };
+    }
     default: return state;
   }
 };

@@ -31,6 +31,20 @@ const initialState = {
   userReducer: {
     freshUser: { email: '', password: '', username: '' },
   },
+  followUnfollowReducer: {
+    currentProfile: {
+      username: '',
+      bio: '',
+      first_name: '',
+      last_name: '',
+      image: '',
+      created_at: '',
+      updated_at: '',
+      isFollowee: false,
+    },
+    followersList: [],
+    followeesList: [],
+  },
 };
 
 export const sampleArticle = {
@@ -68,6 +82,14 @@ export const initialStateWithSample = {
 
 export const initialStateWithSample2 = {
   article: sampleArticle2,
+};
+
+export const tempProfile = {
+  username: localStorage.getItem('username'),
+  first_name: 'You!',
+  last_name: '',
+  image: 'https://iviidev.info/downloads/images/you.jpg',
+  isFollowee: false,
 };
 
 export default initialState;
