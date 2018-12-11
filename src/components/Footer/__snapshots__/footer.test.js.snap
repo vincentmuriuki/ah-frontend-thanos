@@ -67,11 +67,11 @@ exports[`Footer tests testing footer 1`] = `
             </div>
             <div
               className="image-card"
-              key="http://hairdiy.net/wp-content/uploads/2015/07/Angelina-Jolie-2.jpg"
+              key="https://picsum.photos/201"
             >
               <img
                 alt="article image1"
-                src="http://hairdiy.net/wp-content/uploads/2015/07/Angelina-Jolie-2.jpg"
+                src="https://picsum.photos/201"
               />
               <div
                 className="carousel-caption d-none d-md-block"

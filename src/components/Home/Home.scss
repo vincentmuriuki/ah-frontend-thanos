@@ -1,18 +1,39 @@
-.home h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-  
-    &::after {
-      content: "👋";
-      display: inline-block;
-      transform: rotate(-20deg);
-      animation: wave 0.75s infinite linear alternate;
+.header-img {
+  flex-flow: row wrap;
+}
+.home-body {
+  display: flex;
+  flex-flow: row wrap;
+  .lefter {
+    width: 75%;
+    .article-card {
+      max-width: 50%;
+      .image-wrapper {
+        max-height: 300px;
+      }
+    }
+    hr {
+      border-top: solid 2px #adac97;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
-  
-  @keyframes wave {
-    100% {
-      transform: rotate(20deg);
+  .righter {
+    min-width: 25%;
+
+    .righter-title {
+      text-align: center;
+      font-weight: bold;
+      padding-top: 65px;
+      font-size: 30px;
+      text-decoration: underline;
     }
   }
-  
+}
+.lefter-title {
+  padding-bottom: 0%;
+  padding-left: 5%;
+  font-weight: bolder;
+  padding-top: 20px;
+  font-size: 50px;
+}

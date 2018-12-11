@@ -7,20 +7,22 @@ import LoginPage from '../../containers/LoginPage';
 import Header from '../Header';
 import { Footer } from '../Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
+import Articles from '../../containers/Articles';
 
 library.add(faSearch);
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <React.Fragment>
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignUpPageConnected} />
+      <Route path="/articles" component={Articles} />
+      <Route path="/articles/:article_id" component={Articles} />
       <Footer />
-    </div>
+    </React.Fragment>
   </BrowserRouter>
 );
-
 
 export default App;

@@ -3,7 +3,7 @@ import './index.scss';
 
 const images = [
   'https://picsum.photos/200',
-  'http://hairdiy.net/wp-content/uploads/2015/07/Angelina-Jolie-2.jpg',
+  'https://picsum.photos/201',
   'https://picsum.photos/202',
   'https://picsum.photos/203',
   'https://picsum.photos/204',

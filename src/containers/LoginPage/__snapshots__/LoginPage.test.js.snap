@@ -9,7 +9,7 @@ exports[`<Login /> renders the component 1`] = `
   >
     <img
       alt="Sign up poster"
-      src="https://images.pexels.com/photos/34072/pexels-photo.jpg"
+      src="https://iviidev.info/downloads/images/reading.jpg"
     />
   </div>
   <div

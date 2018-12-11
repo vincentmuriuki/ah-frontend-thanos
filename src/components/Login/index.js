@@ -13,7 +13,7 @@ const Login = ({ onChange, onSubmit }) => {
     <div className="container">
       <div className="col-left">
         <img
-          src="https://images.pexels.com/photos/34072/pexels-photo.jpg"
+          src="https://iviidev.info/downloads/images/reading.jpg"
           alt="Sign up poster"
         />
       </div>
