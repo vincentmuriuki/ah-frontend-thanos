@@ -11,6 +11,7 @@ import Articles from '../../containers/Articles';
 import ArticlePageConnected from '../../containers/ArticlePage';
 import ProfileConnected from '../../containers/profiles/profiles';
 import EditProfilePageConnected from '../../containers/profiles/editProfile';
+import Tags from '../TagList/viewTags';
 
 library.add(faSearch);
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/article/:articleId" component={ArticlePageConnected} />
         <Route path="/profile" component={ProfileConnected} />
         <Route path="/profiles/edit" component={EditProfilePageConnected} />
+        <Route path="/tags" component={Tags} />
       </Switch>
       <Footer />
     </React.Fragment>

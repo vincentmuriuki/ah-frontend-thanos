@@ -6,6 +6,7 @@ import socialLoginReducer from './socialLoginReducer';
 import profileReducer from './profileReducer';
 import comments from './commentReducers';
 import ratingReducer from './ratingReducer/ratingReducer';
+import tagsReducer from './tagsReducer';
 
 const reducer = combineReducers({
   loginReducer,
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   profileReducer,
   comments,
   ratingReducer,
+  tagsReducer,
 });
 
 export default reducer;

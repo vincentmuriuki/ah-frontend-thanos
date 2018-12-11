@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './Home.scss';
 import Articles from '../../containers/Articles';
+import Tags from '../TagList/viewTags';
 
 const Home = () => (
   <BrowserRouter>
@@ -17,7 +18,11 @@ const Home = () => (
           <Route path="/" component={Articles} />
         </div>
         <div className="righter">
-          <div className="righter-title">Popular Tags</div>
+          <div>
+            <div className="righter-title">Popular Tags </div>
+            {/* <Route path="/tags" component={Tags} /> */}
+            <Tags />
+          </div>
         </div>
       </div>
     </div>
