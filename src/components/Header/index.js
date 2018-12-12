@@ -28,9 +28,9 @@ const Header = ({ history }) => (
 
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav mr-auto mt-1 mt-lg-0 nav-1">
-          <UrlLink link="/ARTICLES" linkName="ARTICLES" />
-          <UrlLink link="/ABOUT" linkName="ABOUT" />
-          <UrlLink link="/CONTACT" linkName="CONTACT" />
+          <UrlLink link="/articles/page/1" linkName="ARTICLES" />
+          <UrlLink link="/about" linkName="ABOUT" />
+          <UrlLink link="/contact" linkName="CONTACT" />
         </ul>
         <div>
           {

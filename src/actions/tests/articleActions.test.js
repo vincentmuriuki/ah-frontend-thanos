@@ -11,8 +11,9 @@ import {
 import ACTION_TYPE from '../actionTypes';
 import APP_URL from '../../utils/constants';
 
-describe('Article component', () => {
+describe('get articles component', () => {
   let store;
+  const pageNumber = 1;
   let url;
   let sampleId;
 
@@ -31,7 +32,7 @@ describe('Article component', () => {
   it('should handle fetchArticlesFailure', () => {
     const errorMessage = 'Check your internet conectivity';
     moxios.stubRequest(
-      `${APP_URL}/articles`,
+      `${APP_URL}/articles?page=${pageNumber}`,
       {
         status: 400,
         response: {
@@ -43,7 +44,7 @@ describe('Article component', () => {
     );
     store.clearActions();
     const expectedActions = [{ errorMessage, type: 'FETCH_ARTICLES_FAILURE' }];
-    store.dispatch(fetchArticlesThunk()).then(() => {
+    store.dispatch(fetchArticlesThunk(pageNumber)).catch(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -58,7 +59,7 @@ describe('Article component', () => {
       ],
     };
     moxios.stubRequest(
-      `${APP_URL}/articles`,
+      `${APP_URL}/articles?page=${pageNumber}`,
       {
         status: 200,
         response: mockData,
@@ -66,9 +67,9 @@ describe('Article component', () => {
     );
     store.clearActions();
     const expectedActions = [
-      { articles: [{ body: '', title: '' }], type: 'FETCH_ARTICLES_SUCCESS' },
+      { articles: { results: [{ body: '', title: '' }] }, type: 'FETCH_ARTICLES_SUCCESS' },
     ];
-    store.dispatch(fetchArticlesThunk()).then(() => {
+    store.dispatch(fetchArticlesThunk(pageNumber)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -105,7 +106,7 @@ describe('Article component', () => {
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       })
-      .catch(() => {});
+      .catch(() => { });
   });
 
   test('get article thunk action with error', () => {
@@ -118,7 +119,7 @@ describe('Article component', () => {
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       })
-      .catch(() => {});
+      .catch(() => { });
   });
 
   test('get like-status thunk action', () => {
@@ -150,6 +151,6 @@ describe('Article component', () => {
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       })
-      .catch(() => {});
+      .catch(() => { });
   });
 });

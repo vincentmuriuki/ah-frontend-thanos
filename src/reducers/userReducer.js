@@ -27,6 +27,13 @@ const userReducer = (state = initialState, action) => {
       swal(swalMessages.REGISTRATION_SUCCESSFUL);
       return regData;
     case actionTypes.USER_REGISTER_FAIL:
+      swal({
+        ...swalMessages.REGISTRATION_ERROR,
+        text: (
+          action.payload.results.username
+            ? action.payload.results.username[0] : action.payload.results.email[0]
+        ),
+      });
       return regData;
     default: return state;
   }

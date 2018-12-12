@@ -1,5 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import { Articles, mapStateToProps } from './index';
 
@@ -11,13 +13,21 @@ const singleArticle = {
   description: 'train a dragon',
   image_url: 'http://www.artilce',
 };
+// const data = {
+//   data: {
+//     articles: { results: [singleArticle] },
+//   },
+// };
 
-const ruotes = route => (
+const matchTrue = { path: '/articles/page/1', params: { pageNumber: 1 } };
+const matchFalse = { path: '/', params: { pageNumber: 0 } };
+
+const ruotes = () => (
   <MemoryRouter>
     <Articles
       dispatch={jest.fn}
-      match={{ path: route }}
-      data={{ articles: [singleArticle] }}
+      match={matchTrue}
+      data={{ articles: [singleArticle], count: 45 }}
     />
   </MemoryRouter>
 );
@@ -26,6 +36,25 @@ describe('Rendering all articles', () => {
   it('it should return all articles', () => {
     mount(ruotes(articlesRoute));
   });
+});
+
+test('Test if the component has a handleComments function', () => {
+  const middlewares = [thunk];
+  const mockStore = configureStore(middlewares);
+  const pageNumber = '1';
+  const initialState = {};
+  const store = mockStore(initialState);
+
+  const ArticleWrapper = shallow(<Articles
+    dispatch={jest.fn}
+    match={matchFalse}
+    store={store}
+    data={{ articles: [singleArticle], count: 1 }}
+  />);
+  const data = { articles: { results: [singleArticle] } };
+  const wrapper = ArticleWrapper.instance();
+  wrapper.renderPage(data, matchFalse, pageNumber);
+  wrapper.renderPage(data, matchTrue, pageNumber);
 });
 
 describe('Articles rendering on home', () => {

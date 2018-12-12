@@ -44,8 +44,10 @@ describe('Testing User Reducer', () => {
   test('Test Reducer User Register Fail', () => {
     const intialState = {};
     const payload = {
-      username: ['user username already exists'],
-      email: ['user email already exists'],
+      results: {
+        username: ['user username already exists'],
+        email: ['user email already exists'],
+      },
     };
     const action = {
       type: ACTION_TYPE.USER_REGISTER_FAIL,

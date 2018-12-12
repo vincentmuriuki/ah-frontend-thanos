@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test  pagination Snap shot pagination Component 1`] = `
+<div>
+  <br />
+  <ul
+    className="pagination justify-content-center"
+  >
+    <li
+      className="page-item null"
+    >
+      <a
+        className="page-link"
+        href="articles/page/2"
+        tabIndex="-1"
+      >
+        Previous
+      </a>
+    </li>
+    <li
+      className="page-item null"
+      key="1"
+    >
+       
+      <a
+        className="page-link"
+        href="articles/page/1"
+      >
+        1
+      </a>
+    </li>
+    <li
+      className="page-item null"
+    >
+      <a
+        className="page-link"
+        href="articles/page/4"
+      >
+        Next
+      </a>
+    </li>
+  </ul>
+</div>
+`;
