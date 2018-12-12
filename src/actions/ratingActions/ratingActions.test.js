@@ -2,7 +2,7 @@ import moxios from 'moxios';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import {
-  ratingSuccess, fetchRatingThunk, postRatingSuccess, postRating,
+  ratingSuccess, fetchRatingThunk, postRatingSuccess, postRating, postRatingFailed,
 } from './index';
 import ACTION_TYPE from '../actionTypes';
 import APP_URL from '../../utils/constants';
@@ -27,6 +27,15 @@ describe('Login Actions tests', () => {
     // import and pass your custom axios instance to this method
     moxios.uninstall();
   });
+  it('should return an error on unsuccessful rating of an article', () => {
+    const errorMessage = { error: 'Some error' };
+    const expectedAction = {
+      type: ACTION_TYPE.POST_RATING_FAILED,
+      payload: errorMessage,
+    };
+    expect(postRatingFailed(errorMessage)).toEqual(expectedAction);
+  });
+
   test('Successful get and post rating action', () => {
     expect(ratingSuccess(rate)).toEqual(expect.objectContaining(
       actionTypesData(ACTION_TYPE.GET_RATING_SUCCESS, rate),

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { Login } from '../../components/Login';
 import { LoginPage, mapDispatchToProps } from './index';
 
+
 const mockStore = configureMockStore([thunk]);
 let store = mockStore({});
 
@@ -14,6 +15,8 @@ describe('<Login />', () => {
     enqueue: jest.fn(),
   };
   test('renders the component', () => {
+    // const mockStore = configureMockStore([thunk]);
+    store = mockStore({});
     const LoginComponent = shallow(
       <Provider store={store}>
         <Login onChange={jest.fn()} onSubmit={jest.fn()} />
@@ -60,6 +63,7 @@ describe('handle Invoke email for password reset', () => {
     wrapper.instance().handleChange({ target: { id: 'email', value: 'richard@gmail.com' } });
     expect(wrapper.state('email')).toBe('richard@gmail.com');
   });
+
   it('should trigger login user dispatch', () => {
     const dispatch = jest.fn();
     mapDispatchToProps(dispatch).loginUser({});
