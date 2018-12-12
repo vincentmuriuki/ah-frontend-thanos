@@ -1,4 +1,4 @@
-.container {
+.login-box {
   display: flex;
   align-items: stretch;
   padding: 30px;
@@ -59,7 +59,7 @@
 
 // For responsiveness
 @media only screen and (max-width: 900px) {
-  .container,
+  .login-box,
   .social-login-icons {
     flex-wrap: wrap;
   }

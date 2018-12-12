@@ -6,7 +6,6 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import App from './components/App';
 
-
 describe('Provider and App', () => {
   let app;
   let provider;

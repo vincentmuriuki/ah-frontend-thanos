@@ -4,7 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import './signup.scss';
 import SocialMediaLinks from '../SocialMediaLinks';
-import LoginSignupRedirect from '../LoginSignupRedirect';
+import generateRedirectLinks from '../../commons/redirectLinks';
+
 
 library.add(fab);
 
@@ -50,7 +51,7 @@ const SignUp = ({ onSubmit, onChange }) => {
   );
 
   return (
-    <div className="container">
+    <div className="container signup-box">
       <div className="col-left">
         <img src="https://iviidev.info/downloads/images/reading.jpg" alt="Sign up poster" />
       </div>
@@ -67,7 +68,7 @@ const SignUp = ({ onSubmit, onChange }) => {
               <SocialMediaLinks />
             </div>
           </div>
-          <LoginSignupRedirect message="Already a member? " link="login" linkName="Login" />
+          {generateRedirectLinks('Already a member? ', 'login', 'Login')}
         </form>
       </div>
     </div>

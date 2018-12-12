@@ -2,7 +2,7 @@
 
 exports[`<Login /> renders the component 1`] = `
 <div
-  className="container"
+  className="container login-box"
 >
   <div
     className="col-left"
@@ -74,11 +74,18 @@ exports[`<Login /> renders the component 1`] = `
           <SocialMediaLinks />
         </div>
       </div>
-      <LoginSignupRedirect
-        link="signup"
-        linkName="Sign Up"
-        message="Not yet a member? "
-      />
+      <div
+        className="small mt-3"
+      >
+        <span>
+          Not yet a member? 
+        </span>
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </div>
     </form>
   </div>
 </div>

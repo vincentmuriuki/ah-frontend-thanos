@@ -63,9 +63,11 @@ describe('Test User actions', () => {
     }];
     const store = mockStore({});
 
-    store.dispatch(userSignup()).then(() => {
-      expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
-    });
+    store.dispatch(userSignup())
+      .then(() => {
+        expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
+      })
+      .catch(() => {});
   });
 
   test('UserSignup Action Fail', () => {

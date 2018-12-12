@@ -9,7 +9,7 @@ const initialState = {
   },
 };
 
-const user = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_USER_INPUT:
       return {
@@ -30,4 +30,4 @@ const user = (state = initialState, action) => {
   }
 };
 
-export default user;
+export default userReducer;
