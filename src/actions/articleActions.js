@@ -55,10 +55,7 @@ export const getLikeStatusThunk = ({ articleId, token }) => (dispatch, getState)
   const url = `${APP_URL}/articles/${articleId}/like_status`;
   return axios.get(url, { headers: { Authorization: `Token ${token}` } })
     .then((response) => {
-      const obj = response.data.results.filter(
-        res => res.user.username === localStorage.getItem('username')
-        && res.article === getState().articleReducer.article.id,
-      );
+      const obj = response.data.results.filter(res => res.user.username === localStorage.getItem('username') && res.article === getState().articleReducer.article.id);
       dispatch(getLikeStatusAction(obj));
     })
     .catch(() => {}); // has no like-status

@@ -6,9 +6,13 @@ const initalState = {
   successMessage: '',
 };
 
+
 const loginReducer = (state = initalState, action) => {
   switch (action.type) {
     case ACTION_TYPE.USER_LOGIN_SUCCESS:
+      localStorage.setItem('token', action.payload.response.token);
+      localStorage.setItem('username', action.payload.response.username);
+      window.location.replace('/');
       return {
         ...state,
         user_details: action.payload.response,
@@ -22,10 +26,8 @@ const loginReducer = (state = initalState, action) => {
         user_details: '',
         successMessage: '',
       };
-
     default:
       return state;
   }
 };
-
 export default loginReducer;

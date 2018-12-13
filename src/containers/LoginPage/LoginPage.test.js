@@ -1,82 +1,55 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router-dom';
-import Login from '../../components/Login';
-import LoginPage from './index';
+import { Login } from '../../components/Login';
+import { LoginPage } from './index';
 
-const mockStore = configureMockStore([thunk]);
 let store;
 
-const props = {
-  signUp: jest.fn(),
-  signupData: {
-    errors: {
-      password: ['Wrong password'],
-    },
-  },
-};
-
 describe('<Login />', () => {
+  global.___loader = { // eslint-disable-line no-underscore-dangle
+    enqueue: jest.fn(),
+  };
   test('renders the component', () => {
-    const LoginComponent = shallow(<Login onChange={jest.fn()} onSubmit={jest.fn()} />);
+    const LoginComponent = shallow(
+      <Provider store={store}>
+        <Login onChange={jest.fn()} onSubmit={jest.fn()} />
+      </Provider>,
+    );
     expect(LoginComponent).toMatchSnapshot();
   });
 });
 
+describe('testing dispatch', () => {
+
+});
 describe('tesing login container', () => {
-  let wrapper;
-  beforeEach(() => {
-    store = mockStore({
-      LoginReducer: {
-        errors: {
-          email: ['The email not valid'],
-          password: ['Wrong password'],
-        },
-      },
-    });
-  });
+  const wrapper = shallow(<Provider store={store}><LoginPage /></Provider>);
   it('should mount view all component', () => {
-    wrapper = mount(
-      <MemoryRouter>
-        <Provider store={store}>
-          <LoginPage props={props} loginUser={jest.fn} />
-        </Provider>
-      </MemoryRouter>,
-    );
-    expect(wrapper.find('Login').length).toBe(1);
+    expect(wrapper.find(LoginPage)).toHaveLength(1);
   });
 });
-
 describe('handle Invoke email for password reset', () => {
-  let component;
-  store = mockStore({});
-  beforeEach(() => {
-    component = mount(
-      <MemoryRouter>
-        <Provider store={store}>
-          <LoginPage />
-        </Provider>
-      </MemoryRouter>,
-    );
-  });
+  const initialState = {
+    socialLoginReducer: { isLoggedIn: false },
+    loginReducer: { loginUser: {} },
+  };
+  const mockStore = configureMockStore([thunk]);
+  store = mockStore(initialState);
 
-  it('should submit user email and password without fail', () => {
-    component
-      .find('input#email')
-      .simulate('change', { target: { name: 'email', value: 'ewrfg' } });
-    component
-      .find('input#email')
-      .simulate('change', { target: { name: 'email', value: '' } });
-    component
-      .find('input#password')
-      .simulate('change', { target: { name: 'password', value: '' } });
-    component
-      .find('input#password')
-      .simulate('change', { target: { name: 'password', value: 'sdfg@dfg' } });
+  const wrapper = shallow(<LoginPage />);
+  wrapper.setProps({ loginUser: jest.fn() });
+  const fakeEventReturn = { target: { id: 1, value: 'some val' } };
+  const fakeEvent = { preventDefault: () => fakeEventReturn };
+  const spy = jest.spyOn(wrapper.instance(), 'handleSubmit');
+  wrapper.instance().handleSubmit(fakeEvent);
+  expect(spy).toHaveBeenCalled();
 
-    component.find('form').simulate('submit');
+
+  it('handles change', () => {
+    wrapper.instance().handleChange({ target: { id: 'email', value: 'richard@gmail.com' } });
+    expect(wrapper.state('email')).toBe('richard@gmail.com');
   });
 });

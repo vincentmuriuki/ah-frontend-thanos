@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Home from './Home';
-import Header from './Header';
-import UrlLink from './link';
+import Home from '../Home';
+import Header from '../Header';
+import UrlLink from '../link';
 
 describe('>>> Shallow Render REACT COMPONENTS', () => {
   let wrapper;

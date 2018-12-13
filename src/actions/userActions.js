@@ -1,8 +1,9 @@
 import axios from 'axios';
 import swal from 'sweetalert2';
 import actionTypes from './actionTypes';
-import swalMessages from './swalAlerts';
 import APP_URL from '../utils/constants';
+import { SocialLogin, LogIn, socialLoginFailure } from './actionCreators';
+import axiosInstance from '../commons/axiosInstance';
 
 export const signupSuccessful = response => ({
   type: actionTypes.USER_REGISTER_SUCCESS,
@@ -26,17 +27,24 @@ export const userSignup = freshUser => (dispatch) => {
       dispatch(signupSuccessful({
         results: response.data.results,
       }));
-      swal(swalMessages.REGISTRATION_SUCCESSFUL);
-      setTimeout(() => window.location.replace('/login'), 3000);
     })
     .catch((error) => {
-      if (error.response) {
-        dispatch(signupFail({
-          results: error.response.data.results,
-        }));
-        const errors = error.response.data.results;
-        const message = (errors.username ? errors.username[0] : errors.email[0]);
-        swal({ ...swalMessages.REGISTRATION_ERROR, text: message });
-      }
+      dispatch(signupFail({
+        results: error.response.data.results,
+      }));
     });
 };
+
+
+export const socialUserLogin = (url, token) => (dispatch) => {
+  dispatch(SocialLogin(true));
+  return axiosInstance.post(`${url}/${token}`)
+    .then(response => dispatch(LogIn(response.data.results)))
+    .catch((error) => {
+      dispatch(socialLoginFailure({
+        results: error.response,
+        status_code: error.response,
+      }));
+    });
+};
+export default socialUserLogin;
