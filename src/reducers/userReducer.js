@@ -1,7 +1,5 @@
 // handle all actions pertaining to the user (login, registration, ...)
-import swal from 'sweetalert2';
 import actionTypes from '../actions/actionTypes';
-import swalMessages from '../actions/swalAlerts';
 
 const initialState = {
   freshUser: {
@@ -19,7 +17,6 @@ const userReducer = (state = initialState, action) => {
         freshUser: action.payload,
       };
     case actionTypes.USER_REGISTER_SUCCESS:
-      swal(swalMessages.REGISTRATION_SUCCESSFUL);
       return {
         ...state,
         data: action.payload,
@@ -32,4 +29,5 @@ const userReducer = (state = initialState, action) => {
     default: return state;
   }
 };
+
 export default userReducer;

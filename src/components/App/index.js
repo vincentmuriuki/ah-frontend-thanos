@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Home from '../Home';
-import Login from '../Login/index';
+import LoginPage from '../../containers/LoginPage';
 import Header from '../Header';
 import { Footer } from '../Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
@@ -18,7 +18,7 @@ const App = () => (
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPageConnected} />
         <Route path="/articles" component={Articles} />
         <Route path="/article/:articleId" component={ArticlePageConnected} />

@@ -1,7 +1,6 @@
 import expect from 'expect';
 import userReducer from '../userReducer';
-import socialLoginReducer from '../socialLoginReducer';
-import ACTION_TYPE from '../../actions/actionTypes';
+import actionTypes from '../../actions/actionTypes';
 
 describe('Testing User Reducer', () => {
   test('Test Reducer User Input', () => {
@@ -12,7 +11,7 @@ describe('Testing User Reducer', () => {
       email: 'johndoe@gmail.com',
     };
     const action = {
-      type: ACTION_TYPE.GET_USER_INPUT,
+      type: actionTypes.GET_USER_INPUT,
       payload,
     };
     const expectedData = {
@@ -30,7 +29,7 @@ describe('Testing User Reducer', () => {
       email: 'johndoe@gmail.com',
     };
     const action = {
-      type: ACTION_TYPE.USER_REGISTER_SUCCESS,
+      type: actionTypes.USER_REGISTER_SUCCESS,
       payload,
     };
     const expectedData = {
@@ -47,7 +46,7 @@ describe('Testing User Reducer', () => {
       email: ['user email already exists'],
     };
     const action = {
-      type: ACTION_TYPE.USER_REGISTER_FAIL,
+      type: actionTypes.USER_REGISTER_FAIL,
       payload,
     };
     const expectedData = {
@@ -55,29 +54,5 @@ describe('Testing User Reducer', () => {
       data: action.payload,
     };
     expect(userReducer(intialState, action)).toEqual(expectedData);
-  });
-  test('test user logged in succesfullymwith social media', () => {
-    const data = { response: 'judeinno@gmail.com' };
-    const action = {
-      type: ACTION_TYPE.SOCIAL_LOGIN,
-      payload: data,
-    };
-    const expectedData = {
-      ...data,
-      data: action.payload,
-    };
-    expect(socialLoginReducer(data, action)).toEqual(expectedData);
-  });
-  test('test user logged in succesfullymwith social media', () => {
-    const data = { response: 'judeinno@gmail.com' };
-    const action = {
-      type: ACTION_TYPE.LOGIN,
-      payload: data,
-    };
-    const expectedData = {
-      ...data,
-      data: action.payload,
-    };
-    expect(socialLoginReducer(data, action)).toEqual(expectedData);
   });
 });

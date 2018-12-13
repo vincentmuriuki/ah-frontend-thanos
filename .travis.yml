@@ -6,8 +6,6 @@ cache:
   directories:
     - node_modules
 script:
-  - rm -rf package-lock.json node_modules 
-  - npm i
   - npm install coveralls
   - jest --maxWorkers=2
   - npm run lint

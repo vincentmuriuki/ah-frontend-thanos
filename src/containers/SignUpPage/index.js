@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { getUserInput, userSignup } from '../../actions/userActions';
 import SignUp from '../../components/signup';
 
-
-export class SignUpPage extends Component {
+class SignUpPage extends Component {
   handleUpdateFields = (event) => {
     const { name, value } = event.target;
     const { freshUser, getUserInputs } = this.props;
@@ -29,20 +28,14 @@ export class SignUpPage extends Component {
 }
 
 SignUpPage.propTypes = {
-  signUpuser: PropTypes.func,
-  getUserInputs: PropTypes.func,
-  freshUser: PropTypes.shape({}),
-};
-SignUpPage.defaultProps = {
-  signUpuser: () => {},
-  getUserInputs: () => {},
-  freshUser: {},
+  signUpuser: PropTypes.func.isRequired,
+  getUserInputs: PropTypes.func.isRequired,
+  freshUser: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = ({ userReducer }) => (
   { freshUser: userReducer.freshUser }
 );
-
 export const mapDispatchToProps = dispatch => (
   {
     signUpuser: user => dispatch(userSignup(user)),
@@ -50,4 +43,5 @@ export const mapDispatchToProps = dispatch => (
   }
 );
 
+export { SignUpPage };
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);

@@ -1,29 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import configureMockStore from 'redux-mock-store';
-
+import { shallow, mount } from 'enzyme';
+import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import SignUpPageConnected, { mapDispatchToProps, SignUpPage } from './index';
-
-import ACTION_TYPE from '../../actions/actionTypes';
+import actionTypes from '../../actions/actionTypes';
 
 describe('<SignUpPage />', () => {
   let signUpPageComponent;
-  let wrapper;
-  beforeEach(() => {
-    const middlewares = [thunk];
-    const mockStore = configureMockStore(middlewares);
 
-    const initialState = {
-      articleReducer: { article: {} },
-      userReducer: {
-        freshUser: {
-          email: '', password: '', username: '', isLoggedIn: false, loading: true,
-        },
-      },
-    };
-    const store = mockStore(initialState);
-    signUpPageComponent = shallow(<SignUpPageConnected store={store} />);
+  beforeEach(() => {
+    const mockStore = configureStore([thunk]);
+    const initialState = { articleReducer: { article: {} }, userReducer: { freshUser: {} } };
+    signUpPageComponent = shallow(<SignUpPageConnected store={mockStore(initialState)} />);
   });
 
   it('should render the component', () => {
@@ -33,26 +21,25 @@ describe('<SignUpPage />', () => {
   it('should dispatch a method to get user input', () => {
     const dispatch = jest.fn();
     mapDispatchToProps(dispatch).getUserInputs({});
-    expect(dispatch.mock.calls[0][0]).toEqual({ payload: {}, type: ACTION_TYPE.GET_USER_INPUT });
+    expect(dispatch.mock.calls[0][0]).toEqual({ payload: {}, type: actionTypes.GET_USER_INPUT });
     mapDispatchToProps(dispatch).signUpuser({});
+  });
+
+  it('should call signup user method', () => {
+    const signUpuser = jest.fn();
+    const wrapper = mount(
+      <SignUpPage signUpuser={signUpuser} freshUser={{}} getUserInputs={jest.fn()} />,
+    );
+    wrapper.find('form').simulate('submit');
+    expect(signUpuser).toHaveBeenCalled();
   });
 
   it('should call handle input user method', () => {
     const getUserInputs = jest.fn();
-    wrapper = shallow(
+    const wrapper = mount(
       <SignUpPage signUpuser={jest.fn()} freshUser={{}} getUserInputs={getUserInputs} />,
     );
-    wrapper.instance().handleUpdateFields({ target: { name: 'username', value: 'rachael' } });
+    wrapper.find('input#username').simulate('change');
     expect(getUserInputs).toHaveBeenCalled();
   });
-});
-
-describe('handle Invoke email for password reset', () => {
-  const wrapper = shallow(<SignUpPage />);
-  wrapper.setProps({ signUpuser: jest.fn() });
-  const fakeEventReturn = { target: { id: 1, value: 'some val' } };
-  const fakeEvent = { preventDefault: () => fakeEventReturn };
-  const spy = jest.spyOn(wrapper.instance(), 'handleSignUp');
-  wrapper.instance().handleSignUp(fakeEvent);
-  expect(spy).toHaveBeenCalled();
 });

@@ -2,15 +2,7 @@
 
 exports[`<SignUpPage /> should render the component 1`] = `
 <SignUpPage
-  freshUser={
-    Object {
-      "email": "",
-      "isLoggedIn": false,
-      "loading": true,
-      "password": "",
-      "username": "",
-    }
-  }
+  freshUser={Object {}}
   getUserInputs={[Function]}
   signUpuser={[Function]}
   store={

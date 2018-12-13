@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import Login from '../../components/Login';
 import { loginThunk } from '../../actions/loginActions/loginAction';
 
-export class LoginPage extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,20 +39,17 @@ export class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
-  loginUser: PropTypes.func,
-};
-LoginPage.defaultProps = {
-  loginUser: () => {},
+  loginUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({ data: state.loginReducer });
 
-const mapDispatchToProps = dispatch => ({
+const mapActionsToProps = dispatch => ({
   loginUser: user => dispatch(loginThunk(user)),
 });
 
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapActionsToProps,
 )(LoginPage);

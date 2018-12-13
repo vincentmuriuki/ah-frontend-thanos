@@ -90,7 +90,7 @@ exports[`<SignUp /> renders the component 1`] = `
           >
             Or Sign Up with Social Media: 
           </small>
-          <Connect(SocialLogin) />
+          <SocialMediaLinks />
         </div>
       </div>
       <div

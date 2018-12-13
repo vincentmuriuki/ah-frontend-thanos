@@ -22,9 +22,8 @@ module.exports = {
     "react/jsx-indent": ["error", 2],
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     curly: [2, "multi-line"],
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-    "no-shadow": "warn",
-    "import/no-named-as-default": 0
+	"import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+	"import/no-named-as-default": 0
   },
   globals: {
     page: true,

@@ -1,10 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import Home from '../Home';
 import App from './index';
 
-describe('Home component', () => {
-  const nodes = shallow(<App />);
-  it('should render without crashing', () => {
-    expect(nodes.length).toEqual(1);
-  });
+it('renders without crashing', () => {
+  shallow(<App />);
+});
+
+it('should return app component for the root path', () => {
+  const wrapper = shallow(
+    <MemoryRouter initialEntries={['/']}>
+      <Home />
+    </MemoryRouter>,
+  );
+  expect(wrapper.find(Home)).toHaveLength(1);
 });
