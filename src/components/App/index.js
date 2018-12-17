@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Home from '../Home';
 import Login from '../Login/index';
 import Header from '../Header';
-import { Footer } from '../Footer';
+import FooterConnected from '../../containers/Footer';
 import SignUpPageConnected from '../../containers/SignUpPage';
 import Articles from '../../containers/Articles';
 import ArticlePageConnected from '../../containers/ArticlePage';
@@ -23,7 +23,7 @@ const App = () => (
         <Route path="/articles" component={Articles} />
         <Route path="/article/:articleId" component={ArticlePageConnected} />
       </Switch>
-      <Footer />
+      <FooterConnected />
     </React.Fragment>
   </BrowserRouter>
 );

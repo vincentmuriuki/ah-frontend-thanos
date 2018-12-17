@@ -16,8 +16,10 @@ describe('<ArticlePage />', () => {
   let wrapper;
   let mockStore;
   let likeDislikeArticleDispatch;
+  let dispatch;
 
   beforeEach(() => {
+    dispatch = jest.fn();
     props = {
       match: { params: { articleId: sampleArticle.id } },
       likeDislikeArticleDispatch: jest.fn(),
@@ -59,7 +61,6 @@ describe('<ArticlePage />', () => {
   });
 
   it('should check for the presence of like/dislike dispatch', () => {
-    const dispatch = jest.fn();
     mapDispatchToProps(dispatch).likeDislikeArticleDispatch({});
     expect(dispatch.mock.calls[0][0]).toBeDefined();
   });

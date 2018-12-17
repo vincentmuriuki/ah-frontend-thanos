@@ -4,15 +4,18 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { Login } from '../../components/Login';
-import { LoginPage } from './index';
+import { LoginPage, mapDispatchToProps } from './index';
 
 let store;
+let mockStore;
 
 describe('<Login />', () => {
   global.___loader = { // eslint-disable-line no-underscore-dangle
     enqueue: jest.fn(),
   };
   test('renders the component', () => {
+    mockStore = configureMockStore([thunk]);
+    store = mockStore({});
     const LoginComponent = shallow(
       <Provider store={store}>
         <Login onChange={jest.fn()} onSubmit={jest.fn()} />
@@ -26,6 +29,8 @@ describe('testing dispatch', () => {
 
 });
 describe('tesing login container', () => {
+  mockStore = configureMockStore([thunk]);
+  store = mockStore({});
   const wrapper = shallow(<Provider store={store}><LoginPage /></Provider>);
   it('should mount view all component', () => {
     expect(wrapper.find(LoginPage)).toHaveLength(1);
@@ -36,7 +41,7 @@ describe('handle Invoke email for password reset', () => {
     socialLoginReducer: { isLoggedIn: false },
     loginReducer: { loginUser: {} },
   };
-  const mockStore = configureMockStore([thunk]);
+  mockStore = configureMockStore([thunk]);
   store = mockStore(initialState);
 
   const wrapper = shallow(<LoginPage />);
@@ -51,5 +56,11 @@ describe('handle Invoke email for password reset', () => {
   it('handles change', () => {
     wrapper.instance().handleChange({ target: { id: 'email', value: 'richard@gmail.com' } });
     expect(wrapper.state('email')).toBe('richard@gmail.com');
+  });
+
+  it('should trigger login user dispatch', () => {
+    const dispatch = jest.fn();
+    mapDispatchToProps(dispatch).loginUser({});
+    expect(dispatch.mock.calls[0][0]).toBeDefined();
   });
 });

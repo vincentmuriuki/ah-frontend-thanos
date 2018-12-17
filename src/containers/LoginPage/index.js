@@ -47,7 +47,7 @@ LoginPage.defaultProps = {
 
 const mapStateToProps = state => ({ data: state.loginReducer });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loginUser: user => dispatch(loginThunk(user)),
 });
 

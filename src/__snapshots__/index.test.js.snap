@@ -26,7 +26,7 @@ exports[`Provider and App renders <App/> correctly 1`] = `
       path="/article/:articleId"
     />
   </Switch>
-  <Footer />
+  <Connect(Footer) />
 </BrowserRouter>
 `;
 
