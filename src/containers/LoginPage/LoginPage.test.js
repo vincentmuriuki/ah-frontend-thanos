@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Login } from '../../components/Login';
 import { LoginPage, mapDispatchToProps } from './index';
 
-const mockStore = configureMockStore([thunk]);
+let mockStore = configureMockStore([thunk]);
 let store = mockStore({});
 
 describe('<Login />', () => {
@@ -30,11 +30,9 @@ describe('testing dispatch', () => {
   });
 });
 describe('tesing login container', () => {
-  const wrapper = shallow(
-    <Provider store={store}>
-      <LoginPage />
-    </Provider>,
-  );
+  mockStore = configureMockStore([thunk]);
+  store = mockStore({});
+  const wrapper = shallow(<Provider store={store}><LoginPage /></Provider>);
   it('should mount view all component', () => {
     expect(wrapper.find(LoginPage)).toHaveLength(1);
   });
@@ -60,7 +58,8 @@ describe('handle Invoke email for password reset', () => {
     wrapper.instance().handleChange({ target: { id: 'email', value: 'richard@gmail.com' } });
     expect(wrapper.state('email')).toBe('richard@gmail.com');
   });
-  it('should trigger login user dispatch', () => {
+
+  it('should check for the presence of dispatch methods', () => {
     const dispatch = jest.fn();
     mapDispatchToProps(dispatch).loginUser({});
     expect(dispatch.mock.calls[0][0]).toBeDefined();

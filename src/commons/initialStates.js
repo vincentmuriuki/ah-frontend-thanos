@@ -46,6 +46,13 @@ const initialState = {
     },
   },
   ratingReducer: {},
+  searchReducer: {
+    searchArticles: [],
+    searchQuery: '',
+    title: '',
+    tag: '',
+    author: '',
+  },
 };
 
 export const sampleArticle = {
@@ -84,5 +91,11 @@ export const initialStateWithSample = {
 export const initialStateWithSample2 = {
   article: sampleArticle2,
 };
+
+export const sampleListOfArticles = [
+  sampleArticle, { ...sampleArticle, id: 2 }, { ...sampleArticle, id: 3 },
+  { ...sampleArticle, id: 4 }, { ...sampleArticle, id: 5 }, { ...sampleArticle, id: 6 },
+  { ...sampleArticle, id: 7 }, { ...sampleArticle, id: 8 }, { ...sampleArticle, id: 9 },
+];
 
 export default initialState;
