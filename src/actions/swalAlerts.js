@@ -15,6 +15,13 @@ const swalMessages = {
     type: 'success',
     confirmButtonText: 'continue',
   },
+  ARTICLE_DELETED_SUCCESSFUL: {
+    title: 'Article deleted',
+    text: 'Your article was deleted successfully',
+    type: 'success',
+    showConfirmButton: false,
+    timer: 3000,
+  },
   REGISTRATION_ERROR: {
     title: 'Unable to complete registration',
     text: '',

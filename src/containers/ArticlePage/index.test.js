@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 import ArticlePageConnected, { ArticlePage, mapDispatchToProps } from '.';
 import { sampleArticle } from '../../commons/initialStates';
 
@@ -25,7 +26,7 @@ describe('<ArticlePage />', () => {
       getLikeDislikeStatusDispatch: jest.fn(),
       article: sampleArticle,
     };
-    initialState = { articleReducer: { article: sampleArticle } };
+    initialState = { articleReducer: { article: sampleArticle }, deleteArticleReducer: {} };
     mockStore = configureStore([thunk]);
 
     likeDislikeArticleDispatch = jest.fn();
@@ -33,20 +34,25 @@ describe('<ArticlePage />', () => {
       match, getArticleDispatch, getLikeDislikeStatusDispatch, article,
     } = props;
     wrapper = mount(
-      <ArticlePage
-        store={mockStore(initialState)}
-        match={match}
-        likeDislikeArticleDispatch={likeDislikeArticleDispatch}
-        getArticleDispatch={getArticleDispatch}
-        getLikeDislikeStatusDispatch={getLikeDislikeStatusDispatch}
-        article={article}
-      />,
+      <Provider store={mockStore(initialState)}>
+        <ArticlePage
+          match={match}
+          likeDislikeArticleDispatch={likeDislikeArticleDispatch}
+          getArticleDispatch={getArticleDispatch}
+          getLikeDislikeStatusDispatch={getLikeDislikeStatusDispatch}
+          article={article}
+        />
+      </Provider>,
     );
   });
 
   it('renders the container', () => {
     const { match } = props;
-    wrapper = mount(<ArticlePageConnected store={mockStore(initialState)} match={match} />);
+    wrapper = mount(
+      <Provider store={mockStore(initialState)}>
+        <ArticlePageConnected match={match} />
+      </Provider>,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
