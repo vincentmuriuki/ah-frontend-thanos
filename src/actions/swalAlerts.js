@@ -21,6 +21,12 @@ const swalMessages = {
     type: 'error',
     confirmButtonText: 'Try Agian',
   },
+  PROFILE_ERROR: {
+    title: 'Sorry, An error has occurred',
+    text: 'Please check to see if your logged in',
+    type: 'error',
+    confirmButtonText: 'Try Again',
+  },
 };
 
 export default swalMessages;

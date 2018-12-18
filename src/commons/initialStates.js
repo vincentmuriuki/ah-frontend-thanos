@@ -31,6 +31,15 @@ const initialState = {
   userReducer: {
     freshUser: { email: '', password: '', username: '' },
   },
+  profileReducer: {
+    profile: {
+      bio: '',
+      first_name: '',
+      image: '',
+      isLoggedIn: false,
+      last_name: '',
+    },
+  },
 };
 
 export const sampleArticle = {

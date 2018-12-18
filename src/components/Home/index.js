@@ -1,6 +1,6 @@
 import React from 'react';
-import './Home.scss';
 import { BrowserRouter, Route } from 'react-router-dom';
+import './Home.scss';
 import Articles from '../../containers/Articles';
 
 const Home = () => (

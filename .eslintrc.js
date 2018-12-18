@@ -24,7 +24,8 @@ module.exports = {
     curly: [2, "multi-line"],
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "no-shadow": "warn",
-    "import/no-named-as-default": 0
+    "import/no-named-as-default": ['off'],
+    "react/no-array-index-key":['off']
   },
   globals: {
     page: true,

@@ -1,10 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UrlLink from '../link';
 import './Header.scss';
 
 
-const Header = () => (
+const isLoggedIn = () => (localStorage.getItem('token'));
+
+const Header = ({ history }) => (
   <div className="header">
     <nav className="navbar nav navbar-expand-lg navbar-light">
       <a className="navbar-brand logo" href="/">
@@ -29,10 +33,30 @@ const Header = () => (
           <UrlLink link="/CONTACT" linkName="CONTACT" />
         </ul>
         <div>
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 nav-2">
-            <UrlLink link="/login" linkName="LOGIN" />
-            <UrlLink link="/signup" linkName="SIGN UP" />
-          </ul>
+          {
+            isLoggedIn()
+              ? (
+                <ul className="navbar-nav mr-auto mt-2 mt-lg-0 nav-2">
+                  <UrlLink link="/profile" linkName="PROFILE" />
+                  <UrlLink
+                    link="/logout"
+                    linkName="LOGOUT"
+                    id="logout"
+                    onClick={() => {
+                      localStorage.clear();
+                      history.replace('/');
+                    }}
+                  />
+                </ul>
+
+              )
+              : (
+                <ul className="navbar-nav mr-auto mt-2 mt-lg-0 nav-2">
+                  <UrlLink link="/login" linkName="LOGIN" />
+                  <UrlLink link="/signup" linkName="SIGN UP" />
+                </ul>
+              )
+            }
           <form className="form-inline my-2 my-lg-0 search-form">
             <input
               className="form-control search-box"
@@ -50,5 +74,10 @@ const Header = () => (
     </nav>
   </div>
 );
+Header.propTypes = {
+  history: PropTypes.shape({ replace: PropTypes.func }).isRequired,
+};
 
-export default Header;
+export { Header };
+
+export default withRouter(Header);

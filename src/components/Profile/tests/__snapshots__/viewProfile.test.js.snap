@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component should render correctly 1`] = `
+<Connect(Profile)
+  getProfileAction={[MockFunction]}
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "username": "rachaelminani",
+      },
+    }
+  }
+/>
+`;

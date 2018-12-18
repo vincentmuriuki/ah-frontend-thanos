@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test  Edit Profile container renders the container 1`] = `
+<Connect(EditProfilePage)
+  match={
+    Object {
+      "params": Object {
+        "username": "testUser",
+      },
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  userProfile={Object {}}
+>
+  <EditProfilePage
+    editProfileDispatch={[Function]}
+    getUserInputs={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "username": "testUser",
+        },
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    userProfile={
+      Object {
+        "isLoggedIn": true,
+      }
+    }
+  >
+    <EditProfile
+      onChange={[Function]}
+      onClick={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="container"
+      >
+        <h1
+          className="title"
+        >
+          Edit Profile
+        </h1>
+        <hr />
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-3"
+          >
+            <div
+              className="text-center"
+            >
+              <img
+                alt="avatar"
+                className="img-fluid"
+                src="http://www.macmillanenglish.com/img/author-image.png"
+              />
+              <h6>
+                Upload a different photo...
+              </h6>
+              <div
+                className="col-lg-8 mt-2"
+              >
+                <button
+                  className="btn button"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Upload
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-md-9 personal-info"
+          >
+            <h3
+              className="pl-3"
+            >
+              Personal info
+            </h3>
+            <form
+              className="form-horizontal"
+              onSubmit={[Function]}
+            >
+              <FormInput
+                el={
+                  Object {
+                    "elementId": "first_name",
+                    "inputType": "text",
+                    "placeholder": "First Name",
+                  }
+                }
+                key="first_name"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <div
+                  className="form-group"
+                >
+                  <input
+                    className="form-control"
+                    id="first_name"
+                    name="first_name"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    placeholder="First Name"
+                    type="text"
+                  />
+                </div>
+              </FormInput>
+              <FormInput
+                el={
+                  Object {
+                    "elementId": "last_name",
+                    "inputType": "text",
+                    "placeholder": "Last Name",
+                  }
+                }
+                key="last_name"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <div
+                  className="form-group"
+                >
+                  <input
+                    className="form-control"
+                    id="last_name"
+                    name="last_name"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    placeholder="Last Name"
+                    type="text"
+                  />
+                </div>
+              </FormInput>
+              <textarea
+                className="form-control"
+                id="exampleFormControlTextarea1"
+                name="bio"
+                onChange={[Function]}
+                placeholder="Tell us something about yourself."
+                rows="3"
+              />
+              <div
+                className="col-lg-8"
+              >
+                <button
+                  className="btn  btn-outline-primary mt-4 button"
+                  type="submit"
+                >
+                  Save Changes
+                </button>
+                <span
+                  className="mr-2"
+                />
+                <button
+                  className="btn btn-outline-danger mt-4"
+                  type="submit"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </EditProfile>
+  </EditProfilePage>
+</Connect(EditProfilePage)>
+`;
+
+exports[`Test  Edit Profile container renders the container 2`] = `
+<div
+  className="container"
+>
+  <h1
+    className="title"
+  >
+    Edit Profile
+  </h1>
+  <hr />
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-3"
+    >
+      <div
+        className="text-center"
+      >
+        <img
+          alt="avatar"
+          className="img-fluid"
+          src="http://www.macmillanenglish.com/img/author-image.png"
+        />
+        <h6>
+          Upload a different photo...
+        </h6>
+        <div
+          className="col-lg-8 mt-2"
+        >
+          <button
+            className="btn button"
+            onClick={[MockFunction]}
+            type="submit"
+          >
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-md-9 personal-info"
+    >
+      <h3
+        className="pl-3"
+      >
+        Personal info
+      </h3>
+      <form
+        className="form-horizontal"
+        onSubmit={[Function]}
+      >
+        <FormInput
+          el={
+            Object {
+              "elementId": "first_name",
+              "inputType": "text",
+              "placeholder": "First Name",
+            }
+          }
+          key="first_name"
+          onChange={[MockFunction]}
+          onClick={[Function]}
+        />
+        <FormInput
+          el={
+            Object {
+              "elementId": "last_name",
+              "inputType": "text",
+              "placeholder": "Last Name",
+            }
+          }
+          key="last_name"
+          onChange={[MockFunction]}
+          onClick={[Function]}
+        />
+        <textarea
+          className="form-control"
+          id="exampleFormControlTextarea1"
+          name="bio"
+          onChange={[MockFunction]}
+          placeholder="Tell us something about yourself."
+          rows="3"
+        />
+        <div
+          className="col-lg-8"
+        >
+          <button
+            className="btn  btn-outline-primary mt-4 button"
+            type="submit"
+          >
+            Save Changes
+          </button>
+          <span
+            className="mr-2"
+          />
+          <button
+            className="btn btn-outline-danger mt-4"
+            type="submit"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

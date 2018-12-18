@@ -35,12 +35,29 @@ describe('Login Actions tests', () => {
       status: 200,
       responseText: { email: 'jude@gmail.com' },
     });
-    const expectedtActions = { type: ACTION_TYPE.USER_LOGIN_SUCCESS };
+    const expectedtActions = [{
+      payload: { response: undefined },
+      type: ACTION_TYPE.USER_LOGIN_SUCCESS,
+    }];
     const store = mockStore({});
     store.dispatch(loginThunk())
       .then(() => {
         expect(store.getActions()).toEqual(expect.objectContaining(expectedtActions));
       })
       .catch(() => {});
+  });
+  test('Login unsuccessfull', () => {
+    moxios.stubRequest(`${APP_URL}/users/login`, {
+      status: 400,
+      errors: {
+        results: { errors: ['Some error here'] },
+      },
+    });
+    const store = mockStore({});
+    store.dispatch(loginThunk()).catch(() => {
+      expect(store.getActions()).toEqual(expect.objectContaining(
+        { type: ACTION_TYPE.USER_LOGIN_FAILURE },
+      ));
+    });
   });
 });

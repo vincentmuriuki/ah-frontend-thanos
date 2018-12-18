@@ -5,3 +5,4 @@ package-lock.json
 /coverage
 yarn.lock
 .env
+	yarn-error.log

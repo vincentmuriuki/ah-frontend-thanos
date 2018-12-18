@@ -3,11 +3,15 @@ import React from 'react';
 import Home from '../Home';
 import Header from '../Header';
 import UrlLink from '../link';
+import ViewProfile from '../Profile/viewProfile';
+import EditProfile from '../Profile/editProfile';
 
 describe('>>> Shallow Render REACT COMPONENTS', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<Home />);
+    wrapper = shallow(<ViewProfile />);
+    wrapper = shallow(<EditProfile />);
     wrapper = shallow(<Header />);
     wrapper = shallow(<UrlLink />);
   });

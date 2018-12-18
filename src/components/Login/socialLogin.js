@@ -30,12 +30,12 @@ export class SocialLogin extends React.Component {
 
   handleFacebookResponse = (response) => {
     const token = response.accessToken;
-    this.login('api/auth/facebook', token);
+    this.login('auth/facebook', token);
   }
 
   handleGoogleResponse = (response) => {
     const token = response.accessToken;
-    this.login('api/auth/google', token);
+    this.login('auth/google', token);
   }
 
   render() {

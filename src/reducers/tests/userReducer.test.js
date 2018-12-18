@@ -2,6 +2,7 @@ import expect from 'expect';
 import userReducer from '../userReducer';
 import socialLoginReducer from '../socialLoginReducer';
 import ACTION_TYPE from '../../actions/actionTypes';
+import { LogIn } from '../../actions/actionCreators';
 
 describe('Testing User Reducer', () => {
   test('Test Reducer User Input', () => {
@@ -56,28 +57,9 @@ describe('Testing User Reducer', () => {
     };
     expect(userReducer(intialState, action)).toEqual(expectedData);
   });
-  test('test user logged in succesfullymwith social media', () => {
-    const data = { response: 'judeinno@gmail.com' };
-    const action = {
-      type: ACTION_TYPE.SOCIAL_LOGIN,
-      payload: data,
-    };
-    const expectedData = {
-      ...data,
-      data: action.payload,
-    };
-    expect(socialLoginReducer(data, action)).toEqual(expectedData);
-  });
-  test('test user logged in succesfullymwith social media', () => {
-    const data = { response: 'judeinno@gmail.com' };
-    const action = {
-      type: ACTION_TYPE.LOGIN,
-      payload: data,
-    };
-    const expectedData = {
-      ...data,
-      data: action.payload,
-    };
-    expect(socialLoginReducer(data, action)).toEqual(expectedData);
+  test('social media', () => {
+    const initiaState = { isLoggedIn: false };
+    const newState = socialLoginReducer(initiaState, LogIn());
+    expect(newState).toEqual({ isLoggedIn: true });
   });
 });
