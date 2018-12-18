@@ -168,6 +168,9 @@ exports[`<Article /> should render correctly 1`] = `
         likes={12}
         onLikeDislike={[MockFunction]}
       />
+      <Connect(RatingPage)
+        articleId={1}
+      />
       <div
         className="article-views"
       >

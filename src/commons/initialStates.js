@@ -45,6 +45,7 @@ const initialState = {
       results: [],
     },
   },
+  ratingReducer: {},
 };
 
 export const sampleArticle = {

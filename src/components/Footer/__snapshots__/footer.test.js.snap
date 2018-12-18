@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer tests testing create image 1`] = `
-<div
-  className="image-card"
-  key="[object Object]"
->
-  <img
-    alt="article image1"
-    src={Object {}}
-  />
-  <div
-    className="carousel-caption d-none d-md-block"
-  />
-</div>
-`;
-
 exports[`Footer tests testing footer 1`] = `
 <div
   className="footer"
@@ -231,5 +216,20 @@ exports[`Footer tests testing footer 1`] = `
       </ul>
     </div>
   </div>
+</div>
+`;
+
+exports[`Footer tests testing footer 2`] = `
+<div
+  className="image-card"
+  key="[object Object]"
+>
+  <img
+    alt="article image1"
+    src={Object {}}
+  />
+  <div
+    className="carousel-caption d-none d-md-block"
+  />
 </div>
 `;

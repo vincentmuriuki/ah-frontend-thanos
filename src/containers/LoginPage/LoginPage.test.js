@@ -23,7 +23,12 @@ describe('<Login />', () => {
   });
 });
 
-describe('testing dispatch', () => {});
+describe('testing dispatch', () => {
+  it('should dispatch a method to get user input', () => {
+    const dispatch = jest.fn();
+    mapDispatchToProps(dispatch).loginUser({});
+  });
+});
 describe('tesing login container', () => {
   const wrapper = shallow(
     <Provider store={store}>
@@ -34,6 +39,7 @@ describe('tesing login container', () => {
     expect(wrapper.find(LoginPage)).toHaveLength(1);
   });
 });
+
 describe('handle Invoke email for password reset', () => {
   const initialState = {
     socialLoginReducer: { isLoggedIn: false },

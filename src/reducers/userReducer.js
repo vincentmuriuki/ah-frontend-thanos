@@ -12,23 +12,22 @@ const initialState = {
 };
 
 const userReducer = (state = initialState, action) => {
+  const getInputData = {
+    ...state,
+    freshUser: action.payload,
+  };
+  const regData = {
+    ...state,
+    data: action.payload,
+  };
   switch (action.type) {
     case actionTypes.GET_USER_INPUT:
-      return {
-        ...state,
-        freshUser: action.payload,
-      };
+      return getInputData;
     case actionTypes.USER_REGISTER_SUCCESS:
       swal(swalMessages.REGISTRATION_SUCCESSFUL);
-      return {
-        ...state,
-        data: action.payload,
-      };
+      return regData;
     case actionTypes.USER_REGISTER_FAIL:
-      return {
-        ...state,
-        data: action.payload,
-      };
+      return regData;
     default: return state;
   }
 };

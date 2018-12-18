@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RatingDisplay /> and <Rating /> renders the component 1`] = `
+<div>
+  <p
+    className="rateDisplayTitle"
+  >
+    Aricle Rating
+  </p>
+  <_default
+    key="0"
+  />
+  <_default
+    key="1"
+  />
+  <_default
+    key="2"
+  />
+  <_default
+    key="3"
+  />
+  <_default
+    key="4"
+  />
+</div>
+`;
+
+exports[`<RatingDisplay /> and <Rating /> renders the component 2`] = `
+<div>
+  <div
+    className="rateForm"
+  >
+    <form
+      className="form-horizontal"
+      onSubmit={[MockFunction]}
+    >
+      <div
+        className="ml-2 rateTitle"
+      >
+        <p>
+          Rate the article
+        </p>
+      </div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="col-sm-10 ml-1 rateData"
+          id="rating-form"
+        >
+          <label
+            className="radio-inline mr-2"
+            htmlFor="rating1"
+            onChange={[MockFunction]}
+          >
+            <input
+              className="rateClass"
+              id="rating1"
+              name="rating"
+              type="radio"
+              value="1"
+            />
+            <span
+              className="ml-2"
+            >
+              1
+            </span>
+          </label>
+          <label
+            className="radio-inline mr-2"
+            htmlFor="rating2"
+            onChange={[MockFunction]}
+          >
+            <input
+              className="rateClass"
+              id="rating2"
+              name="rating"
+              type="radio"
+              value="2"
+            />
+            <span
+              className="ml-2"
+            >
+              2
+            </span>
+          </label>
+          <label
+            className="radio-inline mr-2"
+            htmlFor="rating3"
+            onChange={[MockFunction]}
+          >
+            <input
+              className="rateClass"
+              id="rating3"
+              name="rating"
+              type="radio"
+              value="3"
+            />
+            <span
+              className="ml-2"
+            >
+              3
+            </span>
+          </label>
+          <label
+            className="radio-inline mr-2"
+            htmlFor="rating4"
+            onChange={[MockFunction]}
+          >
+            <input
+              className="rateClass"
+              id="rating4"
+              name="rating"
+              type="radio"
+              value="4"
+            />
+            <span
+              className="ml-2"
+            >
+              4
+            </span>
+          </label>
+          <label
+            className="radio-inline mr-2"
+            htmlFor="rating5"
+            onChange={[MockFunction]}
+          >
+            <input
+              className="rateClass"
+              id="rating5"
+              name="rating"
+              type="radio"
+              value="5"
+            />
+            <span
+              className="ml-2"
+            >
+              5
+            </span>
+          </label>
+        </div>
+      </div>
+      <button
+        className="rateBt"
+        type="submit"
+      >
+        Submit Rate
+      </button>
+    </form>
+  </div>
+</div>
+`;

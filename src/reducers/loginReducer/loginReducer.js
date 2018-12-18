@@ -24,7 +24,6 @@ const loginReducer = (state = initalState, action) => {
       };
     case ACTION_TYPE.USER_LOGIN_FAILURE:
       swal({ ...swalMessages.LOGIN_ERROR, text: action.errorMessage });
-
       return {
         ...state,
         errorMessage: action.errorMessage,

@@ -27,7 +27,11 @@ describe('<ArticlePage />', () => {
       article: sampleArticle,
     };
     initialState = {
-      articleReducer: { article: sampleArticle }, comments: { getCommentData: { results: [] } },
+      articleReducer: { article: sampleArticle },
+      comments: {
+        getCommentData: { results: [] },
+      },
+      ratingReducer: { rating: 1 },
     };
     mockStore = configureStore([thunk]);
 
