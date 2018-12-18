@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Article /> should render correctly 1`] = `
+<div
+  className="col-sm-8 offset-2"
+>
+  <br />
+  <div>
+    <div
+      key="1"
+    >
+      <div
+        className="media border p-3 bg-light"
+      >
+        <div
+          className="media-body"
+        >
+          <h6>
+            Sulaiman
+          </h6>
+          <p>
+            This is a comment
+          </p>
+          <small>
+            <i>
+              Posted on   
+            </i>
+            2018-12-10T05:23:51.342553Z
+          </small>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Article /> should render correctly 2`] = `
+<div
+  className="col-sm-8 offset-2"
+>
+  <h3>
+     Comments 
+  </h3>
+  <br />
+  <form
+    onSubmit={[MockFunction]}
+  >
+    <div
+      className="form-group"
+    >
+      <p>
+        Write your comment :
+      </p>
+      <textarea
+        className="form-control"
+        id="comment"
+        name="comment_body"
+        onChange={[MockFunction]}
+        required={true}
+        rows="5"
+      />
+    </div>
+    <button
+      className="btn btn-dark offset-10"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <br />
+  <br />
+</div>
+`;

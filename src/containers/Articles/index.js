@@ -16,13 +16,23 @@ export class Articles extends Component {
     const { match } = this.props;
     return (
       <div className="articles-body">
-        {match.path !== '/'
-          ? data.articles.map(article => (<ArticleDisplay article={article} key={article.id} />
-          ))
-          : data.articles
-            .slice(0, 4).map(article => (<ArticleDisplay article={article} key={article.id} />
-
-            ))}
+        {data.articles
+          ? (
+            <div className="row">
+              {
+                match.path !== '/'
+                  ? data.articles.map(article => (
+                    <ArticleDisplay article={article} key={article.id} />
+                  ))
+                  : data.articles
+                    .filter((i, index) => (index < 4)).map(article => (
+                      <ArticleDisplay article={article} key={article.id} />
+                    ))
+              }
+            </div>
+          )
+          : <span>Loading....</span>
+        }
       </div>
     );
   }

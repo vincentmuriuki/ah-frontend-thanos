@@ -4,6 +4,7 @@ import loginReducer from './loginReducer/loginReducer';
 import articleReducer from './articleReducer';
 import socialLoginReducer from './socialLoginReducer';
 import profileReducer from './profileReducer';
+import comments from './commentReducers';
 
 const reducer = combineReducers({
   loginReducer,
@@ -11,7 +12,7 @@ const reducer = combineReducers({
   articleReducer,
   socialLoginReducer,
   profileReducer,
-
+  comments,
 });
 
 export default reducer;

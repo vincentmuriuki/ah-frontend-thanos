@@ -40,6 +40,11 @@ const initialState = {
       last_name: '',
     },
   },
+  comments: {
+    getCommentData: {
+      results: [],
+    },
+  },
 };
 
 export const sampleArticle = {

@@ -25,8 +25,8 @@ const App = () => (
         <Route path="/article/:articleId" component={ArticlePageConnected} />
         <Route path="/profile" component={ProfileConnected} />
         <Route path="/profiles/edit" component={EditProfilePageConnected} />
-        <Footer />
       </Switch>
+      <Footer />
     </React.Fragment>
   </BrowserRouter>
 );
